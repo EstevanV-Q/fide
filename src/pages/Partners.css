@@ -1,0 +1,286 @@
+.partners-page {
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.partners-hero {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.partners-hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.partners-hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Benefits Section */
+.benefits {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.benefits h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-card i {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+/* Commission Structure */
+.commission-structure {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.commission-structure h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.commission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.commission-card {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.commission-card:hover {
+  transform: translateY(-5px);
+}
+
+.commission-rate {
+  font-size: 3rem;
+  color: #007bff;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+/* How It Works */
+.how-it-works {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.how-it-works h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-weight: bold;
+}
+
+/* Registration Form */
+.registration {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.registration h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.registration-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* FAQ Section */
+.partners-faq {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.partners-faq h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+/* Current Partners */
+.current-partners {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.current-partners h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.partner-logo {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.partner-logo img {
+  max-width: 100%;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .partners-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .benefits-grid,
+  .commission-grid,
+  .steps-grid,
+  .faq-grid,
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .registration {
+    padding: 2rem 1rem;
+  }
+} 

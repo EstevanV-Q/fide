@@ -1,0 +1,246 @@
+.status-page {
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.status-hero {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.status-hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.status-hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* System Overview */
+.system-overview {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.system-overview h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.metric-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.metric-card h3 {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Services Status */
+.services-status {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-status h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.service-header h3 {
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.status-indicator {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.service-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metric .label {
+  color: #666;
+}
+
+.metric .value {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+/* Incident History */
+.incident-history {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.incident-history h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.incident-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.incident-item {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.incident-date {
+  min-width: 120px;
+  color: #666;
+  font-weight: 500;
+}
+
+.incident-content {
+  flex: 1;
+}
+
+.incident-content h3 {
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.incident-content p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.incident-status {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.incident-status.resolved {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Status Legend */
+.status-legend {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.status-legend h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.legend-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.legend-text {
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .status-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .incident-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .incident-date {
+    min-width: auto;
+  }
+
+  .metrics-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+} 

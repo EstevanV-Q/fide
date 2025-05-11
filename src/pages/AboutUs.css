@@ -2,129 +2,248 @@
   padding-top: 80px;
 }
 
-/* Hero Section */
 .about-hero {
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-  color: white;
-  padding: 6rem 2rem;
+  background: transparent;
+  border: 5px solid transparent;
+  border-image: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  border-image-slice: 1;
+  animation: gradientAnimation 10s ease infinite;
+  padding: 50px 20px;
   text-align: center;
+  color: black;
 }
 
 .about-hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  animation: textColorAnimation 5s ease infinite;
 }
 
 .about-hero-content p {
   font-size: 1.2rem;
-  opacity: 0.9;
+  animation: textColorAnimation 5s ease infinite;
 }
 
-/* Mission & Vision Section */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes textColorAnimation {
+  0% {
+    color: #ff7eb3;
+  }
+  50% {
+    color: #8e44ad;
+  }
+  100% {
+    color: #3498db;
+  }
+}
+
 .mission-vision {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 4rem 2rem;
-  background-color: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 50px 20px;
+  background: transparent;
+  border: 4px solid transparent;
+  border-radius: 25px;
+  text-align: center;
+  color: black;
 }
 
 .mission, .vision {
-  text-align: center;
-  padding: 2rem;
+  flex: 1;
+  padding: 20px;
 }
 
-.mission h2, .vision h2 {
-  color: #1a1a1a;
-  margin-bottom: 1rem;
+.mission {
+  order: 2;
 }
 
-/* History Section */
+.vision {
+  order: 1;
+}
+
+.mission-vision h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textColorAnimation 5s ease infinite;
+}
+.mission-vision p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+  background-size: 200% 200%;
+  animation: backgroundFadeAnimation 5s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .history {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Espaciado entre los elementos */
+  padding: 50px 20px;
+  background: transparent;
+  border: 4px solid transparent;
+  border-image-slice: 1;
+  animation: gradientAnimation 10s ease infinite;
+  border-radius: 25px;
+  text-align: center;
+  color: black;
 }
 
 .history h2 {
-  text-align: center;
-  margin-bottom: 3rem;
-  color: #1a1a1a;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textColorAnimation 5s ease infinite;
 }
 
 .timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espaciado entre los elementos de la línea de tiempo */
   position: relative;
-  max-width: 800px;
-  margin: 0 auto;
+  padding-left: 2rem;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
+  top: 0;
+  left: 1rem;
+  width: 4px;
   height: 100%;
-  background-color: #007bff;
+  background: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
 }
 
 .timeline-item {
-  display: flex;
-  justify-content: center;
-  padding: 2rem 0;
   position: relative;
+  padding-left: 2rem;
 }
 
-.year {
-  background-color: #007bff;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
+
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: transparent;
+  border: 5px solid transparent;
+  border-image: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  border-image-slice: 1;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.content {
-  background-color: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 8px;
-  width: 45%;
-  margin-left: 55%;
+.timeline-item .year {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #a2d9ff, #74b9ff, #3498db);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cascadeAnimation 4s ease infinite;
 }
 
-.timeline-item:nth-child(even) .content {
-  margin-left: 0;
-  margin-right: 55%;
+@keyframes cascadeAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
-/* Team Section */
+.timeline-item .content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.timeline-item .content p {
+  font-size: 1rem;
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.5;
+}
+
 .team {
   padding: 4rem 2rem;
-  background-color: #f8f9fa;
+  background-color: transparent;
 }
 
 .team h2 {
   text-align: center;
   margin-bottom: 3rem;
-  color: #1a1a1a;
+  background: linear-gradient(90deg, #ffd700, #ffac33, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldenGradientAnimation 3s ease-in-out infinite;
+  background: linear-gradient(90deg, #ffd700, #ffac33, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+  
+
+
+@keyframes goldenGradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .team-member {
   text-align: center;
-  background-color: white;
+  background: transparent;
   padding: 2rem;
   border-radius: 8px;
+  border: 3px solid transparent;
+  border-image: linear-gradient(90deg, #ffd700, #ffac33, #ffcc00);
+  border-image-slice: 1;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.team-member:hover {
+  box-shadow: 0 8px 15px rgba(255, 223, 0, 0.6);
+  transform: translateY(-5px);
 }
 
 .team-member img {
@@ -136,21 +255,47 @@
 }
 
 .team-member h3 {
-  color: #1a1a1a;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, #ffd700, #ffac33, #ffcc00);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldenGradientAnimation 3s ease-in-out infinite;
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: whiteGrayAnimation 3s ease-in-out infinite;
   margin-bottom: 0.5rem;
+  text-decoration: line-through;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+@keyframes whiteGrayAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .team-member p {
-  color: #666;
+  color: #ffffff;
   margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ffffff, #dcdcdc);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: whiteGrayAnimation 3s ease-in-out infinite;
 }
 
 .team-member .bio {
   font-size: 0.9rem;
-  color: #666;
+  color: #ffffff;
 }
 
-/* Infrastructure Section */
 .infrastructure {
   padding: 4rem 2rem;
   max-width: 1200px;
@@ -159,8 +304,12 @@
 
 .infrastructure h2 {
   text-align: center;
-  margin-bottom: 3rem;
-  color: #1a1a1a;
+  margin-bottom: 5rem;
+  font-size: 40px;
+  background: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textColorAnimation 2s ease infinite;
 }
 
 .infrastructure-grid {
@@ -170,10 +319,54 @@
 }
 
 .infrastructure-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 2rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
+  margin-bottom: 3rem;
+  padding: 1.5rem; /* Espaciado interno */
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ffcce0, #d1a6d6, #a6c8e0);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: lightTextColorAnimation 2s ease-in-out infinite;
+  
+  border-radius: 15px; /* Esquinas suaves */
+  box-shadow: 0 4px 6px rgba(15, 15, 15, 0.1); /* Sombra para resaltar */
+}
+
+@keyframes lightTextColorAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.tit2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  background-size: 200% 200%;
+  animation: textColorAnimation 3s ease infinite, bounceAnimation 2s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes bounceAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .infrastructure-item i {
@@ -182,16 +375,25 @@
   margin-bottom: 1rem;
 }
 
-/* Certifications Section */
 .certifications {
   padding: 4rem 2rem;
-  background-color: #f8f9fa;
+  background: transparent;
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  border-image-slice: 1;
+  border-radius: 25px;
+  animation: gradientAnimation 10s ease infinite;
+  text-align: center;
+  color: black;
 }
 
 .certifications h2 {
-  text-align: center;
+  font-size: 2rem;
   margin-bottom: 3rem;
-  color: #1a1a1a;
+  background: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textColorAnimation 5s ease infinite;
 }
 
 .certifications-grid {
@@ -204,24 +406,40 @@
 
 .certification {
   text-align: center;
-  background-color: white;
+  background: transparent;
   padding: 2rem;
-  border-radius: 8px;
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  border-image-slice: 1;
+  border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.certification img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-bottom: 1rem;
+.certification:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Stats Section */
 .stats {
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-  color: white;
+  background: transparent;
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #007bff, #0056b3, #003f7f);
+  border-image-slice: 1;
+  border-radius: 25px;
+  animation: gradientAnimation 10s ease infinite;
+  text-align: center;
+  color: black;
+}
+
+.stats h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #007bff, #0056b3, #003f7f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textColorAnimation 5s ease infinite;
 }
 
 .stats-grid {
@@ -234,20 +452,49 @@
 
 .stat-item {
   text-align: center;
+  background: transparent;
+  padding: 2rem;
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #007bff, #0056b3, #003f7f);
+  border-image-slice: 1;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .stat-number {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #007bff, #0056b3, #003f7f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: blueGradientAnimation 4s ease infinite;
 }
 
 .stat-label {
   font-size: 1.1rem;
   opacity: 0.9;
+  color: #666;
 }
 
-/* Responsive Design */
+@keyframes blueGradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @media (max-width: 768px) {
   .about-hero-content h1 {
     font-size: 2rem;
@@ -280,4 +527,4 @@
   .mission-vision {
     grid-template-columns: 1fr;
   }
-} 
+}

@@ -90,22 +90,22 @@ const AboutUs: React.FC = () => {
         <div className="infrastructure-grid">
           <div className="infrastructure-item">
             <i className="fas fa-server"></i>
-            <h3>Centros de Datos</h3>
+            <h3 className="tit2">Centros de Datos</h3>
             <p>Ubicaciones estratégicas en Norteamérica, Europa y Asia.</p>
           </div>
           <div className="infrastructure-item">
             <i className="fas fa-shield-alt"></i>
-            <h3>Seguridad</h3>
+            <h3 className="tit2">Seguridad</h3>
             <p>Protección DDoS, firewall de última generación y monitoreo 24/7.</p>
           </div>
           <div className="infrastructure-item">
             <i className="fas fa-network-wired"></i>
-            <h3>Red</h3>
+            <h3 className="tit2">Red</h3>
             <p>Conectividad redundante con múltiples proveedores de internet.</p>
           </div>
           <div className="infrastructure-item">
             <i className="fas fa-bolt"></i>
-            <h3>Energía</h3>
+            <h3 className="tit2">Energía</h3>
             <p>Sistemas UPS y generadores de respaldo para máxima disponibilidad.</p>
           </div>
         </div>
@@ -158,4 +158,4 @@ const AboutUs: React.FC = () => {
   );
 };
 
-export default AboutUs; 
+export default AboutUs;

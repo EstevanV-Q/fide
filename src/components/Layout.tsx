@@ -71,23 +71,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     };
   }, []);
 
-  // Parallax effect
-  useEffect(() => {
-    const handleParallax = (e: MouseEvent) => {
-      if (layoutRef.current) {
-        const { clientX, clientY } = e;
-        const { innerWidth, innerHeight } = window;
-        const x = (clientX - innerWidth / 2) / 50;
-        const y = (clientY - innerHeight / 2) / 50;
-
-        layoutRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-      }
-    };
-
-    window.addEventListener('mousemove', handleParallax);
-    return () => window.removeEventListener('mousemove', handleParallax);
-  }, []);
-
   // Intersection Observer for reveal animations
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -127,4 +110,4 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   );
 };
 
-export default Layout; 
+export default Layout;

@@ -117,18 +117,18 @@ const AboutUs: React.FC = () => {
         <div className="certifications-grid">
           <div className="certification">
             <img src="/certifications/iso27001.png" alt="ISO 27001" />
-            <h3>ISO 27001</h3>
-            <p>Certificación en Seguridad de la Información</p>
+            <h3 className="tit3">ISO 27001</h3>
+            <p className='p1'>Certificación en Seguridad de la Información</p>
           </div>
           <div className="certification">
             <img src="/certifications/iso9001.png" alt="ISO 9001" />
-            <h3>ISO 9001</h3>
-            <p>Certificación en Gestión de Calidad</p>
+            <h3 className='tit3'>ISO 9001</h3>
+            <p className='p1'>Certificación en Gestión de Calidad</p>
           </div>
           <div className="certification">
             <img src="/certifications/pci-dss.png" alt="PCI DSS" />
-            <h3>PCI DSS</h3>
-            <p>Estándar de Seguridad de Datos para la Industria de Tarjetas de Pago</p>
+            <h3 className='tit3'>PCI DSS</h3>
+            <p className='p1'>Estándar de Seguridad de Datos para la Industria de Tarjetas de Pago</p>
           </div>
         </div>
       </section>

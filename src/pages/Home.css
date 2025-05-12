@@ -202,11 +202,19 @@
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: var(--spacing-8) var(--spacing-4);
+    padding: 20px;
   }
 
   .hero-content {
-    margin-bottom: var(--spacing-8);
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
   }
 
   .hero-cta {
@@ -223,11 +231,32 @@
 
   .stats-container {
     flex-direction: column;
-    gap: var(--spacing-6);
+    gap: 1.5rem;
   }
 
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
@@ -464,4 +493,4 @@
 
 .plan-button:hover {
   background-color: #0056b3;
-} 
+}

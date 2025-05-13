@@ -1,52 +1,89 @@
 .partners-page {
   padding-top: 80px;
+  padding: 80px 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
 }
 
 /* Hero Section */
 .partners-hero {
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-  color: white;
+
   padding: 6rem 2rem;
   text-align: center;
+  
 }
 
 .partners-hero-content h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  background: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: simpleGradientAnimation 3s linear infinite;
 }
 
 .partners-hero-content p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   opacity: 0.9;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 0px #ffffff, 0 0 10px #ffffff;
 }
 
 /* Benefits Section */
 .benefits {
   padding: 4rem 2rem;
-  background-color: #f8f9fa;
+  background: transparent;
 }
 
 .benefits h2 {
   text-align: center;
   margin-bottom: 3rem;
   color: #1a1a1a;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: simpleGradientAnimation 3s linear infinite;
 }
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   max-width: 1200px;
+  height: auto;
+  grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
 }
 
 .benefit-card {
   text-align: center;
   padding: 2rem;
-  background-color: white;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #31084e, #05053d);
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db) 1;
+  border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+.h1 {
+  font-size: 27px;
+  margin-bottom: 1rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 0px #ffffff, 0 0 2px #ffffff, 0 0 0px #ffffff, 0 0 0px #ffffff;
+}
+
+.p1 {
+ color: linear-gradient(35deg, #ffffff, #a3a2a2);
 }
 
 .benefit-card:hover {
@@ -70,6 +107,14 @@
   text-align: center;
   margin-bottom: 3rem;
   color: #1a1a1a;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: simpleGradientAnimation 3s linear infinite;
 }
 
 .commission-grid {
@@ -81,13 +126,18 @@
 .commission-card {
   text-align: center;
   padding: 2rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  background: linear-gradient(135deg, #31084e, #05053d);
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db) 1;
+  border-radius: 15px;
+  transition: transform 0.5s ease;
+  animation: gradientAnimation 10s ease infinite;
 }
 
 .commission-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(255, 126, 179, 0.5), 0 4px 15px rgba(142, 68, 173, 0.5), 0 4px 15px rgba(52, 152, 219, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .commission-rate {
@@ -100,14 +150,22 @@
 /* How It Works */
 .how-it-works {
   padding: 4rem 2rem;
-  background-color: #f8f9fa;
 }
 
 .how-it-works h2 {
   text-align: center;
   margin-bottom: 3rem;
   color: #1a1a1a;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: simpleGradientAnimation 3s linear infinite;
 }
+
 
 .steps-grid {
   display: grid;
@@ -120,15 +178,26 @@
 .step {
   text-align: center;
   padding: 2rem;
-  background-color: white;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #31084e, #05053d);
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db) 1;
+  border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: gradientAnimation 10s ease infinite;
+  transition: transform 0.5s ease;
 }
+
+.step:hover {
+    transform: scale(1.10);
+    border: 2px solid transparent;
+    border-image: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff) 1;
+    transition: transform 0.6s ease, box-shadow 2.0s ease;
+  }
 
 .step-number {
   width: 40px;
   height: 40px;
-  background-color: #007bff;
+  background: linear-gradient(135deg, #007bff, #0056b3, #003f7f);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -136,6 +205,7 @@
   justify-content: center;
   margin: 0 auto 1rem;
   font-weight: bold;
+  animation: blueGradientAnimation 4s ease infinite;
 }
 
 /* Registration Form */
@@ -148,14 +218,25 @@
 .registration h2 {
   text-align: center;
   margin-bottom: 3rem;
-  color: #1a1a1a;
+  animation: simpleGradientAnimation 3s linear infinite;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: simpleGradientAnimation 3s linear infinite;
 }
 
 .registration-form {
-  background-color: white;
+  background: linear-gradient(135deg, #31084e, #05053d);
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db) 1;
+  animation: gradientAnimation 10s ease infinite;
 }
 
 .form-group {
@@ -165,7 +246,11 @@
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #1a1a1a;
+  background: linear-gradient(10deg, hwb(246 44% 0%), #00d0f5, #3cc1ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 500;
 }
 
@@ -173,19 +258,37 @@
 .form-group textarea {
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid #ddd;
+  border: 1px solid #84208d;
   border-radius: 4px;
   font-size: 1rem;
+  background-color: transparent;
+  color: rgb(255, 116, 176);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+input:focus {
+  border-color: rgb(85, 9, 95);
+  outline: none;
+}
+
+.form-group textarea:focus {
+  border-color: rgb(141, 1, 122);
+  outline: none;
 }
 
 .form-group textarea {
   resize: vertical;
 }
+.ttl {
+  font-size: 18px;
+  margin-bottom: 1rem;
+ font-family: Arial, Helvetica, sans-serif;
+}
 
 .submit-button {
   width: 100%;
   padding: 1rem;
-  background-color: #007bff;
+  background: linear-gradient(135deg, #461d6b, #7617be);
   color: white;
   border: none;
   border-radius: 4px;
@@ -196,19 +299,32 @@
 }
 
 .submit-button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #270547, #350f53);
 }
 
 /* FAQ Section */
 .partners-faq {
   padding: 4rem 2rem;
-  background-color: #f8f9fa;
 }
 
 .partners-faq h2 {
   text-align: center;
-  margin-bottom: 3rem;
-  color: #1a1a1a;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: simpleGradientAnimation 3s linear infinite;
+}
+
+.faq-item:hover {
+  transform: scale(1.05);
+  border: 2px solid transparent;
+  border-image: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff) 1;
+  box-shadow: 0 4px 15px rgba(255, 126, 179, 0.5), 0 4px 15px rgba(142, 68, 173, 0.5), 0 4px 15px rgba(52, 152, 219, 0.5);
+  transition: transform 0.4s ease, border-image 0.4s ease, box-shadow 0.4s ease;
 }
 
 .faq-grid {
@@ -220,15 +336,28 @@
 }
 
 .faq-item {
-  background-color: white;
+  background: linear-gradient(135deg, #31084e, #05053d);
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db) 1;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+.faq-item:hover {
+  transform: scale(1.05);
 }
 
 .faq-item h3 {
-  color: #1a1a1a;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
+  background: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: simpleGradientAnimation 3s linear infinite;
 }
 
 /* Current Partners */
@@ -240,8 +369,14 @@
 
 .current-partners h2 {
   text-align: center;
-  margin-bottom: 3rem;
-  color: #1a1a1a;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: simpleGradientAnimation 3s linear infinite;
 }
 
 .partners-grid {
@@ -254,9 +389,12 @@
 .partner-logo {
   text-align: center;
   padding: 2rem;
-  background-color: white;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #31084e, #05053d);
+  border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db) 1;
+  animation: gradientAnimation 10s ease infinite;
 }
 
 .partner-logo img {
@@ -283,4 +421,54 @@
   .registration {
     padding: 2rem 1rem;
   }
-} 
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes blueGradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes simpleGradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.benefits h2,
+.commission-structure h2,
+.how-it-works h2,
+.registration h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: simpleGradientAnimation 3s linear infinite;
+}

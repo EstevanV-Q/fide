@@ -14,27 +14,27 @@ const Partners: React.FC = () => {
 
       {/* Benefits Section */}
       <section className="benefits">
-        <h2>Beneficios del Programa</h2>
+        <h2>¡Beneficios del Programa!</h2>
         <div className="benefits-grid">
           <div className="benefit-card">
             <i className="fas fa-percentage"></i>
-            <h3>Comisiones Atractivas</h3>
-            <p>Gana hasta un 30% de comisión por cada venta que generes</p>
+            <h3 className='h1'>Comisiones Atractivas</h3>
+            <p className='p1'>Gana hasta un 30% de comisión por cada venta que generes</p>
           </div>
           <div className="benefit-card">
             <i className="fas fa-chart-line"></i>
-            <h3>Ingresos Recurrentes</h3>
-            <p>Recibe comisiones mensuales por la renovación de tus clientes</p>
+            <h3 className='h1'>Ingresos Recurrentes</h3>
+            <p className='p1'>Recibe comisiones mensuales por la renovación de tus clientes</p>
           </div>
           <div className="benefit-card">
             <i className="fas fa-tools"></i>
-            <h3>Herramientas de Marketing</h3>
-            <p>Accede a banners, enlaces de seguimiento y materiales promocionales</p>
+            <h3 className='h1'>Herramientas de Marketing</h3>
+            <p className='p1'>Accede a banners, enlaces de seguimiento y materiales promocionales</p>
           </div>
           <div className="benefit-card">
             <i className="fas fa-chart-bar"></i>
-            <h3>Panel de Control</h3>
-            <p>Monitorea tus ventas y comisiones en tiempo real</p>
+            <h3 className='h1'>Panel de Control</h3>
+            <p className='p1'>Monitorea tus ventas y comisiones en tiempo real</p>
           </div>
         </div>
       </section>
@@ -63,7 +63,7 @@ const Partners: React.FC = () => {
 
       {/* How It Works */}
       <section className="how-it-works">
-        <h2>Cómo Funciona</h2>
+        <h2>¿Cómo Funciona?</h2>
         <div className="steps-grid">
           <div className="step">
             <div className="step-number">1</div>
@@ -85,26 +85,26 @@ const Partners: React.FC = () => {
 
       {/* Registration Form */}
       <section className="registration">
-        <h2>Regístrate como Partner</h2>
+        <h2>¡Regístrate como Partner!</h2>
         <form className="registration-form">
           <div className="form-group">
-            <label htmlFor="name">Nombre Completo</label>
+            <label className='ttl' htmlFor="name">Nombre Completo</label>
             <input type="text" id="name" required />
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label className='ttl' htmlFor="email">Email</label>
             <input type="email" id="email" required />
           </div>
           <div className="form-group">
-            <label htmlFor="website">Sitio Web</label>
+            <label className='ttl' htmlFor="website">Sitio Web</label>
             <input type="url" id="website" required />
           </div>
           <div className="form-group">
-            <label htmlFor="company">Empresa</label>
+            <label className='ttl' htmlFor="company">Empresa</label>
             <input type="text" id="company" />
           </div>
           <div className="form-group">
-            <label htmlFor="message">Mensaje</label>
+            <label className='ttl' htmlFor="message">Mensaje</label>
             <textarea id="message" rows={4}></textarea>
           </div>
           <button type="submit" className="submit-button">Enviar Solicitud</button>

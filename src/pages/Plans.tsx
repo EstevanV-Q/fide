@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Plans.css';
+import ParticlesEffect from '../components/ParticlesEffect';
 
 type PlanCategory = 'shared' | 'vps' | 'wordpress' | 'dedicated' | 'gaming' | 'apps';
 
@@ -277,6 +278,7 @@ const Plans: React.FC = () => {
 
   return (
     <div className="plans-page">
+      <ParticlesEffect />
       <div className="plans-header">
         <h1>Nuestros Planes de Hosting</h1>
         <p>Elige el plan perfecto para tu proyecto</p>
@@ -337,4 +339,4 @@ const Plans: React.FC = () => {
   );
 };
 
-export default Plans; 
+export default Plans;

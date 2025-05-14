@@ -1,5 +1,5 @@
 .about-page {
-  padding-top: 80px;
+  padding-top: 120px; /* Increased padding to move the title further down */
 }
 
 .about-hero {
@@ -108,6 +108,7 @@
   margin-bottom: 15px;
   background: linear-gradient(135deg, #ffd6e7, #a36fb9, #57bafc);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textColorAnimation 5s ease infinite;
   text-shadow: 0 0 1px #ffe5f5, 0 0 1px #ffffff, 0 0 20px #5a075a, 0 0 1px #771b77, 0 0 5px #9c279c, 0 0 10px #ff00ff, 0 0 10px #ff00ff;
@@ -119,6 +120,7 @@
   background-size: 200% 200%;
   animation: backgroundFadeAnimation 5s ease infinite;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff;
 }
@@ -206,6 +208,7 @@
   background: linear-gradient(135deg, #a2d9ff, #74b9ff, #3498db);
   background-size: 200% 200%;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: cascadeAnimation 4s ease infinite;
 }
@@ -227,6 +230,7 @@
   margin-bottom: 2px;
   background: linear-gradient(135deg, #ffffff, #e0e0e0);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -234,6 +238,7 @@
   font-size: 20px;
   background: linear-gradient(135deg, #ffffff, #e0e0e0);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.5;
 }
@@ -248,10 +253,12 @@
   margin-bottom: 3rem;
   background: linear-gradient(90deg, #ffd700, #ffac33, #ffcc00);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: goldenGradientAnimation 3s ease-in-out infinite;
   background: linear-gradient(90deg, #ffd700, #ffac33, #ffcc00);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
   
@@ -268,72 +275,48 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-8);
 }
 
 .team-member {
+  padding: var(--spacing-6);
   text-align: center;
-  background: transparent;
-  padding: 2rem;
-  border-radius: 8px;
-  border: 3px solid transparent;
-  border-image: linear-gradient(90deg, #ffd700, #ffac33, #ffcc00);
-  border-image-slice: 1;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: var(--transition-base);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--border-radius-2xl);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: background 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.team-member:hover {
-  box-shadow: 0 8px 15px rgba(255, 223, 0, 0.6);
-  transform: translateY(-5px);
+.team-member:hover {transform: translateY(-10px);
+  box-shadow: var(--glass-shadow-hover);
+  transition: background 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #3c424b, #2b2f3d, #283b47);
 }
 
 .team-member img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-4);
 }
 
 .team-member h3 {
-  font-size: 1.2rem;
-  background: linear-gradient(90deg, #ffd700, #ffac33, #ffcc00);
-  background-size: 200% 200%;
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-3);
+  background: var(--gradient-accent);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: goldenGradientAnimation 3s ease-in-out infinite;
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: whiteGrayAnimation 3s ease-in-out infinite;
-  margin-bottom: 0.5rem;
-  text-decoration: line-through;
-  border-bottom: 1px solid #dcdcdc;
-}
-
-@keyframes whiteGrayAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
 }
 
 .team-member p {
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  background: linear-gradient(90deg, #ffffff, #f3f3f3);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: whiteGrayAnimation 3s ease-in-out infinite;
+  color: var(--white);
+  opacity: 0.8;
 }
 
 .team-member .bio {
@@ -353,6 +336,7 @@
   font-size: 40px;
   background: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textColorAnimation 2s ease infinite;
 }
@@ -376,6 +360,7 @@
   background: linear-gradient(135deg, #ffc2da, #ffffff);
   background-size: 200% 200%;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: lightTextColorAnimation 2s ease-in-out infinite;
   
@@ -402,6 +387,7 @@
   background-size: 200% 200%;
   animation: textColorAnimation 3s ease infinite, bounceAnimation 2s ease-in-out infinite;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -435,6 +421,7 @@
   margin-bottom: 3rem;
   background: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textColorAnimation 10s ease infinite;
 }
@@ -459,6 +446,14 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.certification img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
 @keyframes gradientBackgroundAnimation {
   0% {
     background-position: 0% 50%;
@@ -479,6 +474,7 @@
 .tit3{ 
   background: linear-gradient(135deg, #a2d9ff, #007bff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1.5rem;
 }
@@ -487,6 +483,7 @@
   font-size: 18px;
   background: linear-gradient(135deg, #ffffff, #bcc2c9);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textColorAnimation 5s ease infinite;
   font-weight: 600;
@@ -509,6 +506,7 @@
   margin-bottom: 3rem;
   background: linear-gradient(135deg, #007bff, #0056b3, #003f7f);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textColorAnimation 5s ease infinite;
 }
@@ -544,6 +542,7 @@
   margin-bottom: 0.5rem;
   background: linear-gradient(135deg, #007bff, #0056b3, #003f7f);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: blueGradientAnimation 4s ease infinite;
 }
@@ -579,6 +578,11 @@
 }
 
 @media (max-width: 768px) {
+
+
+  .about-hero {
+    margin-top: 50px;
+  }
   .about-hero-content h1 {
     font-size: 2rem;
   }
@@ -610,12 +614,14 @@
   .mission-vision {
     grid-template-columns: 1fr;
   }
+
+  .infrastructure h2{ 
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 768px) {
-  .about-page {
-    padding: 20px;
-  }
+ 
 
   .about-hero {
     padding: 10px;

@@ -1,9 +1,11 @@
 import React from 'react';
 import './AboutUs.css';
+import ParticlesEffect from '../components/ParticlesEffect';
 
 const AboutUs: React.FC = () => {
   return (
     <div className="about-page">
+      <ParticlesEffect />
       {/* Hero Section */}
       <section className="about-hero">
         <div className="about-hero-content">
@@ -64,19 +66,19 @@ const AboutUs: React.FC = () => {
         <h2>Nuestro Equipo Directivo</h2>
         <div className="team-grid">
           <div className="team-member">
-            <img src="/team/ceo.jpg" alt="CEO" />
+            <img src="/icons8-jefe-100.png" alt="CEO" />
             <h3>Juan Pérez</h3>
             <p>CEO & Fundador</p>
             <p className="bio">Más de 15 años de experiencia en la industria tecnológica.</p>
           </div>
           <div className="team-member">
-            <img src="/team/cto.jpg" alt="CTO" />
+            <img src="/ceo.png" alt="CTO" />
             <h3>María García</h3>
             <p>CTO</p>
             <p className="bio">Experta en infraestructura cloud y seguridad.</p>
           </div>
           <div className="team-member">
-            <img src="/team/coo.jpg" alt="COO" />
+            <img src="/gerente-de-proyecto.png" alt="COO" />
             <h3>Carlos Rodríguez</h3>
             <p>COO</p>
             <p className="bio">Especialista en operaciones y optimización de procesos.</p>
@@ -116,17 +118,17 @@ const AboutUs: React.FC = () => {
         <h2>Certificaciones y Reconocimientos</h2>
         <div className="certifications-grid">
           <div className="certification">
-            <img src="/certifications/iso27001.png" alt="ISO 27001" />
+            <img src="/yo-asi.png" alt="ISO 27001" />
             <h3 className="tit3">ISO 27001</h3>
             <p className='p1'>Certificación en Seguridad de la Información</p>
           </div>
           <div className="certification">
-            <img src="/certifications/iso9001.png" alt="ISO 9001" />
+            <img src="/garantia.png" alt="ISO 9001" />
             <h3 className='tit3'>ISO 9001</h3>
             <p className='p1'>Certificación en Gestión de Calidad</p>
           </div>
           <div className="certification">
-            <img src="/certifications/pci-dss.png" alt="PCI DSS" />
+            <img src="/servidor-en-la-nube.png" alt="PCI DSS" />
             <h3 className='tit3'>PCI DSS</h3>
             <p className='p1'>Estándar de Seguridad de Datos para la Industria de Tarjetas de Pago</p>
           </div>

@@ -109,6 +109,34 @@
 }
 
 @media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem; /* Reduce el padding para pantallas pequeñas */
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr; /* Coloca las secciones en una sola columna */
+    gap: 1.5rem; /* Ajusta el espacio entre secciones */
+  }
+
+  .footer-bottom {
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    text-align: center; /* Centra el texto */
+    gap: 1rem; /* Reduce el espacio entre elementos */
+  }
+
+  .newsletter form {
+    flex-direction: column; /* Coloca los elementos del formulario en columna */
+    gap: 1rem; /* Ajusta el espacio entre los elementos */
+  }
+
+  .newsletter input {
+    width: 100%; /* Asegura que el input ocupe todo el ancho */
+  }
+
+  .newsletter button {
+    width: 100%; /* Asegura que el botón ocupe todo el ancho */
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
   }
@@ -124,4 +152,4 @@
   .newsletter {
     margin: 0 auto;
   }
-} 
+}

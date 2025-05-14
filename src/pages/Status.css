@@ -16,6 +16,11 @@
   border-radius: 20px;
 
   animation: gradientAnimation 4s ease infinite;
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center; /* Center text inside containers */
 }
 
 .status-hero-content h1 {
@@ -119,16 +124,42 @@ font-size: 1.2rem;
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 3rem;
 }
 
-.service-card {
-  background: linear-gradient(210deg, #4d1b70, #000047);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: gradientAnimation 5s linear infinite;
-  transition: transform 0.3s ease;
+.service-card{ 
+  background: linear-gradient(210deg, #4d1b70, #000047); /* Fondo degradado */
+  border-radius: 15px; /* Bordes más suaves */
+  padding: 50px; /* Reducir el padding */
+  max-width: 100%; /* Ajustar el ancho al 100% del contenedor */
+  height: 250px; /* Reducir la altura para uniformidad */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para hover */
+
+  &:hover {
+    transform: scale(1.05); /* Efecto de escala suave */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 0 15px #ff7eb3, 0 0 15px #8e44ad, 0 0 15px #3498db;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    background: linear-gradient(210deg, #4d1b70, #000047); /* Fondo degradado */
+    border-radius: 20px; /* Bordes suaves */
+    padding: 2rem; /* Aumentar el padding para un fondo más grande */
+    max-width: 100%; /* Ajustar el ancho al 100% del contenedor */
+    height: 250px; /* Establecer una altura fija para uniformidad */
+    width: 100%; /* Asegurar que todos los contenedores ocupen el mismo ancho */
+    display: flex; /* Usar flexbox para alinear contenido */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    margin: 1rem auto; /* Añadir margen para separación */
+    display: flex;
+    flex-direction: column; /* Mantener elementos en columna */
+    justify-content: flex-start; /* Alinear los elementos al inicio verticalmente */
+    align-items: center; /* Centrar los elementos horizontalmente */
+    text-align: center; /* Asegurar que el texto esté centrado */
+    gap: 0.5rem; /* Reducir el espaciado entre elementos */
+  }
 }
 
 .service-card:hover {
@@ -152,6 +183,12 @@ font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
 
+.service-header, .status-indicator, .service-metrics {
+  display: flex;
+  flex-direction: column; /* Asegurar que los elementos internos también estén en columna */
+  align-items: center; /* Centrar los elementos horizontalmente */
+  gap: 0.5rem; /* Espaciado entre los elementos internos */
+}
 
 .service-header h3 {
   color: #000000;
@@ -291,8 +328,8 @@ font-size: 1.2rem;
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 1.5rem; /* Increase spacing between elements */
+  padding: 1.5rem; /* Increase padding for larger size */
   background: linear-gradient(135deg, #31084e, #05053d);
   border-radius: 15px;
   border: 2px solid transparent;
@@ -301,8 +338,8 @@ font-size: 1.2rem;
 }
 
 .legend-color {
-  width: 20px;
-  height: 20px;
+  width: 30px; /* Increase size of the buttons */
+  height: 30px; /* Increase size of the buttons */
   border-radius: 50%;
 }
 
@@ -327,7 +364,16 @@ font-size: 1.2rem;
 
   .metrics-grid,
   .services-grid {
-    grid-template-columns: 1fr;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text inside containers */
+  }
+
+  .legend-color{ 
+    width: 40px;
+    height: 15px;
   }
 }
 

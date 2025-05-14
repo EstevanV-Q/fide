@@ -384,10 +384,17 @@ input:focus {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   align-items: center;
+  margin-top: 50px;
+  animation: gradientAnimation 10s ease infinite;
+  transition: transform 0.5s ease;
 }
+
 
 .partner-logo {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   padding: 2rem;
   background: linear-gradient(135deg, #31084e, #05053d);
   border-radius: 15px;
@@ -395,14 +402,39 @@ input:focus {
   border: 2px solid transparent;
   border-image: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db) 1;
   animation: gradientAnimation 10s ease infinite;
+  transition: transform 0.5s ease;
 }
 
+.partner-logo:hover {
+    transform: scale(1.10);
+    border: 2px solid transparent;
+    border-image: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff) 1;
+    transform: translateY(-10px);
+    transition: transform 0.6s ease, box-shadow 2.0s ease;
+  }
+
 .partner-logo img {
+  border-radius: 50%;
   max-width: 100%;
   height: auto;
   max-height: 80px;
   object-fit: contain;
 }
+
+.partner-logo span{ 
+  font-size: 1.2rem;
+  color: #007bff;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  background: linear-gradient(305deg, #ffa4ca, #eab6ff, #91d3ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: simpleGradientAnimation 3s linear infinite;
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -415,11 +447,43 @@ input:focus {
   .steps-grid,
   .faq-grid,
   .partners-grid {
-    grid-template-columns: 1fr;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text inside containers */
   }
 
   .registration {
     padding: 2rem 1rem;
+  }
+
+  .benefits-grid{ 
+    justify-items: center;
+    align-items: center;
+    place-items: center;
+  }
+
+  .partner-logo {
+    width: 100%; /* Asegurar que todos los contenedores ocupen el mismo ancho */
+    max-width: 300px; /* Establecer un ancho máximo uniforme */
+    height: 170px; /* Establecer una altura fija para uniformidad */
+    margin: 0 auto; /* Centrar los contenedores */
+    display: flex;
+    flex-direction: column; /* Mantener elementos en columna */
+    justify-content: center; /* Centrar contenido verticalmente */
+    align-items: center; /* Centrar contenido horizontalmente */
+  }
+
+  .benefits-grid > * {
+    width: 100%; /* Asegurar que todos los elementos ocupen el mismo ancho */
+    max-width: 300px; /* Establecer un ancho máximo uniforme */
+    height: auto; /* Ajustar la altura automáticamente */
+    margin: 0 auto; /* Centrar los elementos */
+  }
+
+  .h1{ 
+    font-size: 24px;
   }
 }
 

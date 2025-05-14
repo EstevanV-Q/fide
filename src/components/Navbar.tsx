@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,13 +15,31 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { path: '/', label: 'Inicio' },
-    { path: '/planes', label: 'Planes' },
-    { path: '/sobre-nosotros', label: 'Sobre Nosotros' },
-    { path: '/partners', label: 'Partners' },
-    { path: '/status', label: 'Status' }
-  ];
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const menu = document.querySelector('.navbar-menu');
+      const button = document.querySelector('.mobile-menu-btn');
+
+      if (
+        menu &&
+        button &&
+        !menu.contains(event.target as Node) &&
+        !button.contains(event.target as Node)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    } else {
+      document.removeEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -32,33 +49,44 @@ const Navbar: React.FC = () => {
           <div className="logo-glow"></div>
         </Link>
 
-        <button 
+        <button
           className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          {isMobileMenuOpen ? (
+            <span>&#x2715;</span> /* Ícono de cerrar */
+          ) : (
+            <>
+           <span> </span>
+           <span></span>
+           <span></span>
+            
+            </>
+          )}
         </button>
 
-        <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
-            >
-              {link.label}
-              <div className="link-indicator"></div>
-            </Link>
-          ))}
-          <Link to="/discord" className="btn btn-primary nav-cta">
-            Unirse a Discord
-          </Link>
-        </div>
+        
       </div>
+
+      <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+  <Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Inicio</Link>
+  <Link to="/planes" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Planes</Link>
+  <Link to="/sobre-nosotros" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Sobre Nosotros</Link>
+  <Link to="/partners" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Partners</Link>
+  <Link to="/status" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Status</Link>
+  <Link to="/plans" className="nav-cta btn-primary" onClick={() => setIsMobileMenuOpen(false)}>Unirse a Discord</Link>
+
+  {/* Solo visible en móvil si quieres */}
+  <button className="nav-close-btn" onClick={() => setIsMobileMenuOpen(false)}>
+    Cerrar menú
+  </button>
+</div>
+
+
     </nav>
+    
   );
 };
 
-export default Navbar; 
+export default Navbar;

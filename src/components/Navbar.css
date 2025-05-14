@@ -63,9 +63,26 @@
 
 /* Navigation Menu */
 .navbar-menu {
-  display: flex;
+  display: none; /* Ocultar por defecto */
+  justify-content: end;
+  margin-top: -40px;
+  width: 90%;
+}
+
+.navbar-menu.active {
+  display: flex; /* Mostrar el menú cuando está activo */
+  flex-direction: column;
   align-items: center;
-  gap: var(--spacing-6);
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  z-index: var(--z-index-fixed);
+  padding: var(--spacing-8) var(--spacing-4);
 }
 
 .nav-link {
@@ -97,6 +114,73 @@
 .nav-link.active {
   color: var(--color-neon-pink);
 }
+
+/* Escondemos el menú por defecto en móvil */
+.navbar-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra verticalmente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    padding: 1rem;
+    z-index: var(--z-index-fixed);
+    text-align: center;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .nav-close-btn {
+    display: block;
+    margin-top: 2rem;
+  }
+}
+
+
+/* En escritorio, escondemos el botón de cerrar */
+@media (min-width: 769px) {
+  .nav-close-btn {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+
+.nav-close-btn {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+  font-weight: bold;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.nav-close-btn:hover {
+  background: var(--white);
+  color: black;
+}
+
+
+
 
 /* Mobile Menu Button */
 .mobile-menu-btn {
@@ -157,37 +241,92 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .mobile-menu-btn {
+  .navbar {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; /* Ajusta el padding para centrar el contenido */
   }
 
   .navbar-menu {
+    display: flex;
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 400px;
+    right: -100%; /* Oculta el menú inicialmente */
+    width: 100%;
     height: 100vh;
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: var(--spacing-8) var(--spacing-4);
-    transition: var(--transition-base);
+    transition: right 0.3s ease-in-out; /* Agrega una transición suave */
+    z-index: var(--z-index-fixed);
   }
 
   .navbar-menu.active {
-    right: 0;
+    right: 0; /* Muestra el menú cuando está activo */
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
   }
 
   .nav-link {
     width: 100%;
     text-align: center;
-    padding: var(--spacing-3) 0;
+    padding: var(--spacing-2) 0; /* Reduce el padding para mejor ajuste */
   }
 
   .nav-cta {
-    margin: var(--spacing-4) 0 0 0;
+    margin: var(--spacing-3) 0 0 0; /* Ajusta el margen para mejor alineación */
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    padding: 1rem; /* Adjust padding for better centering */
+  }
+
+  .navbar-menu {
+    text-align: center; /* Center text inside the menu */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Space out items to opposite corners */
+    align-items: center;
+    padding: 0.5rem 1rem; /* Adjust padding for better fit */
+  }
+
+  .navbar-logo {
+    display: flex;
+    margin-left: -170px;
+    margin-top: -5px; /* Align logo to the left */
+  }
+
+  .mobile-menu-btn {
+    margin-right: 0; /* Align menu button to the right */
+  }
+
+  .navbar-menu {
+    display: none; /* Keep menu hidden initially */
   }
 }
 
@@ -274,4 +413,27 @@
   .btn-secondary {
     display: none;
   }
-} 
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.submenu-link {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  transition: background-color 0.3s;
+}
+
+.submenu-link:hover {
+  background-color: #f0f0f0;
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Status.css';
+import ParticlesEffect from '../components/ParticlesEffect';
 
 interface ServiceStatus {
   name: string;
@@ -83,6 +84,7 @@ const Status: React.FC = () => {
 
   return (
     <div className="status-page">
+      <ParticlesEffect />
       {/* Hero Section */}
       <section className="status-hero">
         <div className="status-hero-content">
@@ -191,4 +193,4 @@ const Status: React.FC = () => {
   );
 };
 
-export default Status; 
+export default Status;

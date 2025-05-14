@@ -41,8 +41,7 @@
   height: 51px;
   cursor: pointer;
   transition: 0.3s ease;
-  border: none;
-  background: transparent;
+  border-radius: 15px;
   background: linear-gradient(90deg, #ff6ec4, #7873f5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -53,17 +52,19 @@
 
 .category-tab:hover {
   transform: scale(1.1);
+  transition: .2s;
+  border: 2px solid rgb(180, 48, 180);
 }
 
 .category-tab.active {
   background: linear-gradient(145deg, #c54b94, #514eb4);
   -webkit-background-clip: border-box;
-  -webkit-text-fill-color: rgb(245, 238, 244);
+  -webkit-text-fill-color: rgb(224, 225, 255);
 }
 
 .category-tab {
-  border: 2px solid;
-  border-image: linear-gradient(90deg, #c54b94, #514eb4) 1;
+ border: 1px solid transparent;
+
 }
 
 .plans-grid {
@@ -74,19 +75,57 @@
 }
 
 .plan-card {
-
-  border-radius: 8px;
+  border-radius: 15px;
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
-  border-radius: 15px;
-  background: linear-gradient(135deg, #31084e, #05053d);
+  overflow: hidden;
+  
+  /* Efecto Glass */
+  background: rgba(12, 0, 50, 0.25); /* Color base con transparencia */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Borde casi invisible */
+  
+  /* Sombra suave */
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 40, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  
+  /* Gradiente sutil para el fondo */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg, 
+      rgba(65, 105, 225, 0.15) 0%, 
+      rgba(12, 12, 58, 0.3) 100%
+    );
+    z-index: -1;
+    border-radius: inherit;
+  }
 }
 
 .plan-card.featured {
   transform: scale(1.05);
+  background: rgba(20, 20, 80, 0.3);
+}
+
+.plan-card:hover {
+  transform: translateY(-8px);
+  background: rgba(20, 20, 100, 0.35);
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 80, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.plan-card.featured {
+  transform: scale(1.00);
 }
 
 .plan-card:hover {
@@ -113,10 +152,7 @@
   animation: blueGradientAnimation 4s ease infinite;
 }
 
-.price span {
-  font-size: 1rem;
-  color: #ffffff;
-}
+
 
 .plan-card ul {
   list-style: none;
@@ -134,7 +170,7 @@
 
 .plan-card li::before {
   content: "✓";
-  color: #28a745;
+  color: #006eff;
   margin-right: 0.5rem;
   font-weight: bold;
 }
@@ -170,43 +206,77 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* FAQ Section - Glass Card sin bordes */
 .faq-grid {
+  background: rgba(8, 22, 56, 0.2); /* Fondo azul ultra transparente */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  padding: 1.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  border: none;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
 }
 
 .faq-item {
-  background: linear-gradient(135deg, #31084e, #05053d);
-  border-radius: 8px;
-  padding: 2rem;
-  border: 2px solid transparent;
-  border-image: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db) 1;
-  border-radius: 15px;
-  animation: gradientAnimation 10s ease infinite;
-  transition: transform 0.5s ease;
+  background: rgba(16, 32, 72, 0.3); /* Fondo semitransparente */
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.4s ease;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+  border: none !important;
 }
 
+/* Eliminé completamente el pseudo-elemento ::before que creaba bordes */
+
 .faq-item:hover {
-  transform: scale(1.05);
+  background: rgba(24, 48, 96, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 20, 0.1);
 }
 
 .faq-item h3 {
-  color: #ff7eb3;
+  color: #e6f1ff;
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  background: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  background: linear-gradient(135deg, #e6f1ff, #a7c7ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+
 .faq-item p {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
-  background: linear-gradient(135deg, #ffffff, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-weight: 500;
 }
+
+/* Mejoras en los hovers generales */
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 139, 0.2);
+  background: linear-gradient(135deg, hsl(226, 87%, 20%), #0c0c45);
+}
+
+.category-tab:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #3a5fcd, #1e90ff);
+  -webkit-text-fill-color: white;
+  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+}
+
+.select-plan:hover {
+  background: linear-gradient(135deg, #1e90ff, #0066cc);
+  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4);
+}
+
+
 
 @media (max-width: 768px) {
   .plans-page {

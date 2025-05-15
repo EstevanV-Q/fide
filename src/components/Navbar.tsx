@@ -70,18 +70,19 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-  <Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Inicio</Link>
-  <Link to="/planes" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Planes</Link>
-  <Link to="/sobre-nosotros" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Sobre Nosotros</Link>
-  <Link to="/partners" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Partners</Link>
-  <Link to="/status" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Status</Link>
-  <Link to="/plans" className="nav-cta btn-primary" onClick={() => setIsMobileMenuOpen(false)}>Unirse a Discord</Link>
+        <Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Inicio</Link>
+        <Link to="/dominios" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Dominios</Link>
+        <Link to="/planes" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Planes</Link>
+        <Link to="/sobre-nosotros" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Sobre Nosotros</Link>
+        <Link to="/partners" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Partners</Link>
+        <Link to="/status" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Status</Link>
+        <Link to="/plans" className="nav-cta btn-primary" onClick={() => setIsMobileMenuOpen(false)}>Unirse a Discord</Link>
 
-  {/* Solo visible en móvil si quieres */}
-  <button className="nav-close-btn" onClick={() => setIsMobileMenuOpen(false)}>
-    Cerrar menú
-  </button>
-</div>
+        {/* Solo visible en móvil si quieres */}
+        <button className="nav-close-btn" onClick={() => setIsMobileMenuOpen(false)}>
+          Cerrar menú
+        </button>
+      </div>
 
 
     </nav>

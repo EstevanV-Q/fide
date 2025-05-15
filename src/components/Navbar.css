@@ -63,14 +63,17 @@
 
 /* Navigation Menu */
 .navbar-menu {
-  display: none; /* Ocultar por defecto */
-  justify-content: end;
+  display: flex;
+  gap: 1rem;
   margin-top: -40px;
   width: 90%;
+  justify-content: right;
+  margin-left: auto;
+  margin-right: 50px;
 }
 
 .navbar-menu.active {
-  display: flex; /* Mostrar el menú cuando está activo */
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -115,6 +118,25 @@
   color: var(--color-neon-pink);
 }
 
+/* Elimino los estilos especiales de Dominios */
+.nav-link[href="/dominios"] {
+  color: var(--white);
+  font-weight: var(--font-weight-medium);
+}
+
+.nav-link[href="/dominios"]::before {
+  background: var(--gradient-glow);
+  height: 2px;
+}
+
+.nav-link[href="/dominios"]:hover {
+  color: var(--white);
+}
+
+.nav-link[href="/dominios"]:hover::before {
+  background: var(--gradient-glow);
+}
+
 /* Escondemos el menú por defecto en móvil */
 .navbar-menu {
   display: flex;
@@ -122,33 +144,45 @@
 }
 
 @media (max-width: 768px) {
+  .navbar-container {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-logo {
+    margin-left: -170px;
+    margin-top: -5px;
+  }
+
   .navbar-menu {
     display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Centra verticalmente */
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
-    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-8) var(--spacing-4);
+    transition: right 0.3s ease-in-out;
     z-index: var(--z-index-fixed);
-    text-align: center;
+    margin-right: 0;
   }
 
   .navbar-menu.active {
-    display: flex;
+    right: 0;
   }
 
-  .nav-close-btn {
-    display: block;
-    margin-top: 2rem;
+  .mobile-menu-btn {
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
   }
 }
-
 
 /* En escritorio, escondemos el botón de cerrar */
 @media (min-width: 769px) {
@@ -160,7 +194,6 @@
     display: none;
   }
 }
-
 
 .nav-close-btn {
   margin-top: 2rem;
@@ -178,9 +211,6 @@
   background: var(--white);
   color: black;
 }
-
-
-
 
 /* Mobile Menu Button */
 .mobile-menu-btn {
@@ -237,97 +267,6 @@
 
 .nav-cta:hover::before {
   opacity: 0.2;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem; /* Ajusta el padding para centrar el contenido */
-  }
-
-  .navbar-menu {
-    display: flex;
-    position: fixed;
-    top: 0;
-    right: -100%; /* Oculta el menú inicialmente */
-    width: 100%;
-    height: 100vh;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-8) var(--spacing-4);
-    transition: right 0.3s ease-in-out; /* Agrega una transición suave */
-    z-index: var(--z-index-fixed);
-  }
-
-  .navbar-menu.active {
-    right: 0; /* Muestra el menú cuando está activo */
-  }
-
-  .mobile-menu-btn {
-    display: flex;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 10;
-  }
-
-  .nav-link {
-    width: 100%;
-    text-align: center;
-    padding: var(--spacing-2) 0; /* Reduce el padding para mejor ajuste */
-  }
-
-  .nav-cta {
-    margin: var(--spacing-3) 0 0 0; /* Ajusta el margen para mejor alineación */
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar-container {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    padding: 1rem; /* Adjust padding for better centering */
-  }
-
-  .navbar-menu {
-    text-align: center; /* Center text inside the menu */
-  }
-}
-
-
-
-@media (max-width: 768px) {
-  .navbar-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* Space out items to opposite corners */
-    align-items: center;
-    padding: 0.5rem 1rem; /* Adjust padding for better fit */
-  }
-
-  .navbar-logo {
-    display: flex;
-    margin-left: -170px;
-    margin-top: -5px; /* Align logo to the left */
-  }
-
-  .mobile-menu-btn {
-    margin-right: 0; /* Align menu button to the right */
-  }
-
-  .navbar-menu {
-    display: none; /* Keep menu hidden initially */
-  }
 }
 
 /* Animation for menu items */
@@ -399,20 +338,6 @@
 .btn-secondary:hover {
   background-color: #007bff;
   color: white;
-}
-
-@media (max-width: 768px) {
-  .navbar-menu {
-    display: none;
-  }
-  
-  .navbar-container {
-    padding: 0.5rem;
-  }
-  
-  .btn-secondary {
-    display: none;
-  }
 }
 
 .submenu {

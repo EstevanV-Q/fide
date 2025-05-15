@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Plans from './pages/Plans';
+import Domains from './pages/Domains';
 import AboutUs from './pages/AboutUs';
 import Partners from './pages/Partners';
 import Status from './pages/Status';
@@ -19,6 +20,7 @@ function App() {
           <Route path="/sobre-nosotros" element={<Layout><AboutUs /></Layout>} />
           <Route path="/partners" element={<Layout><Partners /></Layout>} />
           <Route path="/status" element={<Layout><Status /></Layout>} />
+          <Route path="/dominios" element={<Layout><Domains /></Layout>} />
         </Routes>
       </div>
     </Router>

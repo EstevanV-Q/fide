@@ -1,9 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import PageLoader from '../components/PageLoader';
 import './Home.css';
 
 const Home: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [selectedRegion, setSelectedRegion] = useState('usa');
+  const [isPageLoading, setIsPageLoading] = useState(true);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -77,14 +80,96 @@ const Home: React.FC = () => {
     };
     animate();
 
+    // Simular carga inicial
+    setTimeout(() => {
+      setIsPageLoading(false);
+    }, 2500);
+
     return () => {
       window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
 
+  const usaPlans = [
+    {
+      name: 'Básico',
+      price: '$29.99',
+      features: [
+        '4 vCPUs',
+        '8GB RAM',
+        '100GB SSD',
+        '5 Gbps Conexión',
+        'Ryzen 7 5800X'
+      ]
+    },
+    {
+      name: 'Pro',
+      price: '$49.99',
+      features: [
+        '8 vCPUs',
+        '16GB RAM',
+        '200GB SSD',
+        '10 Gbps Conexión',
+        'Ryzen 7 5800X'
+      ],
+      popular: true
+    },
+    {
+      name: 'Enterprise',
+      price: '$79.99',
+      features: [
+        '12 vCPUs',
+        '32GB RAM',
+        '500GB SSD',
+        '10 Gbps Conexión',
+        'Ryzen 7 5800X'
+      ]
+    }
+  ];
+
+  const madridPlans = [
+    {
+      name: 'Básico',
+      price: '€34.99',
+      features: [
+        '4 vCPUs',
+        '8GB RAM',
+        '100GB SSD',
+        '5 Gbps Conexión',
+        'Ryzen 9 5900X'
+      ]
+    },
+    {
+      name: 'Pro',
+      price: '€54.99',
+      features: [
+        '8 vCPUs',
+        '16GB RAM',
+        '200GB SSD',
+        '10 Gbps Conexión',
+        'Ryzen 9 5900X'
+      ],
+      popular: true
+    },
+    {
+      name: 'Enterprise',
+      price: '€84.99',
+      features: [
+        '12 vCPUs',
+        '32GB RAM',
+        '500GB SSD',
+        '10 Gbps Conexión',
+        'Ryzen 9 5900X'
+      ]
+    }
+  ];
+
+  const plans = selectedRegion === 'usa' ? usaPlans : madridPlans;
+
   return (
     <div className="home">
       <canvas ref={canvasRef} className="particles-canvas" />
+      {isPageLoading && <PageLoader />}
       
       <section className="hero">
         <div className="hero-content">
@@ -110,6 +195,8 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      
+
       <section className="features">
         <h2 className="section-title">Características Destacadas</h2>
         <div className="features-grid">
@@ -131,6 +218,44 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      <section className="popular-plans">
+        <h2>Planes más populares</h2>
+        <div className="region-selector">
+          <button 
+            className={`region-btn ${selectedRegion === 'usa' ? 'active' : ''}`}
+            onClick={() => setSelectedRegion('usa')}
+          >
+            USA
+          </button>
+          <button 
+            className={`region-btn ${selectedRegion === 'madrid' ? 'active' : ''}`}
+            onClick={() => setSelectedRegion('madrid')}
+          >
+            Madrid
+          </button>
+        </div>
+        <p className="specs-info">
+          {selectedRegion === 'usa' 
+            ? 'Nuestras máquinas en USA cuentan con Ryzen 7 5800X y 5-10 Gbps de conexión'
+            : 'Nuestras máquinas en Madrid cuentan con Ryzen 9 5900X y 5-10 Gbps de conexión'
+          }
+        </p>
+        <div className="plans-grid">
+          {plans.map((plan, index) => (
+            <div key={index} className={`plan-card ${plan.popular ? 'popular' : ''}`}>
+              <h3>{plan.name}</h3>
+              <div className="plan-price">{plan.price}/mes</div>
+              <ul className="plan-features">
+                {plan.features.map((feature, idx) => (
+                  <li key={idx}>{feature}</li>
+                ))}
+              </ul>
+              <button className="btn btn-primary">Seleccionar Plan</button>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="stats">
         <div className="stats-container">
           <div className="stat-item">
@@ -147,6 +272,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      
     </div>
   );
 };

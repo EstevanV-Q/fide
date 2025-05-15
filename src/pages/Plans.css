@@ -92,6 +92,8 @@
   box-shadow: 
     0 4px 20px rgba(0, 0, 40, 0.2),
     inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+   opacity: 0.8;
   
   /* Gradiente sutil para el fondo */
   &::before {
@@ -114,6 +116,7 @@
 .plan-card.featured {
   transform: scale(1.05);
   background: rgba(20, 20, 80, 0.3);
+  opacity: 0.8;
 }
 
 .plan-card:hover {

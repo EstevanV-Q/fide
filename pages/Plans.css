@@ -1,0 +1,345 @@
+.plans-page {
+  padding: 80px 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
+}
+
+.plans-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.plans-header h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textColorAnimation 5s ease infinite;
+}
+
+.plans-header p {
+  font-size: 1.2rem;
+  color: #666;
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.category-tab {
+  width: 131px;
+  height: 51px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: medium;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.category-tab:hover {
+  transform: scale(1.1);
+  transition: .2s;
+  border: 2px solid rgb(180, 48, 180);
+}
+
+.category-tab.active {
+  background: linear-gradient(145deg, #c54b94, #514eb4);
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: rgb(224, 225, 255);
+}
+
+.category-tab {
+ border: 1px solid transparent;
+
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.plan-card {
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  
+  /* Efecto Glass */
+  background: rgba(12, 0, 50, 0.25); /* Color base con transparencia */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Borde casi invisible */
+  
+  /* Sombra suave */
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 40, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+   opacity: 0.8;
+  
+  /* Gradiente sutil para el fondo */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg, 
+      rgba(65, 105, 225, 0.15) 0%, 
+      rgba(12, 12, 58, 0.3) 100%
+    );
+    z-index: -1;
+    border-radius: inherit;
+  }
+}
+
+.plan-card.featured {
+  transform: scale(1.05);
+  background: rgba(20, 20, 80, 0.3);
+  opacity: 0.8;
+}
+
+.plan-card:hover {
+  transform: translateY(-8px);
+  background: rgba(20, 20, 100, 0.35);
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 80, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.plan-card.featured {
+  transform: scale(1.00);
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-card h3 {
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 1px rgb(241, 232, 252), 0 0 15px rgba(255, 255, 255, 0.521);
+}
+
+.price {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin: 1rem 0;
+  background: linear-gradient(135deg, #395e88, #ffffff, #54a5f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: blueGradientAnimation 4s ease infinite;
+}
+
+
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.plan-card li {
+  margin: 0.8rem 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.plan-card li::before {
+  content: "✓";
+  color: #006eff;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.select-plan {
+  width: 100%;
+  padding: 1rem;
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background: linear-gradient(135deg, #007bff, #0056b3, #003f7f);
+  animation: blueGradientAnimation 4s ease infinite;
+}
+
+.select-plan:hover {
+  background-color: #0056b3;
+}
+
+.plans-faq {
+  margin-top: 4rem;
+}
+
+.plans-faq h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  background: linear-gradient(135deg, #ff7eb3, #8e44ad, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* FAQ Section - Glass Card sin bordes */
+.faq-grid {
+  background: rgba(8, 22, 56, 0.2); /* Fondo azul ultra transparente */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  border: none;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.faq-item {
+  background: rgba(16, 32, 72, 0.3); /* Fondo semitransparente */
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.4s ease;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+  border: none !important;
+}
+
+/* Eliminé completamente el pseudo-elemento ::before que creaba bordes */
+
+.faq-item:hover {
+  background: rgba(24, 48, 96, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 20, 0.1);
+}
+
+.faq-item h3 {
+  color: #e6f1ff;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, #e6f1ff, #a7c7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.faq-item p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Mejoras en los hovers generales */
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 139, 0.2);
+  background: linear-gradient(135deg, hsl(226, 87%, 20%), #0c0c45);
+}
+
+.category-tab:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #3a5fcd, #1e90ff);
+  -webkit-text-fill-color: white;
+  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+}
+
+.select-plan:hover {
+  background: linear-gradient(135deg, #1e90ff, #0066cc);
+  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4);
+}
+
+
+
+@media (max-width: 768px) {
+  .plans-page {
+    padding: 80px 1rem 2rem;
+  }
+
+  .plans-header h1 {
+    font-size: 2rem;
+  }
+
+  .category-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .category-tab {
+    width: 100%;
+  }
+
+  .plan-card.featured {
+    transform: none;
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes textColorAnimation {
+  0% {
+    color: #ff7eb3;
+  }
+  50% {
+    color: #8e44ad;
+  }
+  100% {
+    color: #3498db;
+  }
+}
+
+@keyframes blueGradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

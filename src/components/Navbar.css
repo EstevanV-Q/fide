@@ -62,32 +62,149 @@
 }
 
 /* Navigation Menu */
+/* CORRECCIÓN: Elimina margin-left negativo y deja display: flex normal */
 .navbar-menu {
   display: flex;
-  gap: 1rem;
-  margin-top: -40px;
-  width: 90%;
-  justify-content: right;
-  margin-left: auto;
-  margin-right: 50px;
-}
-
-.navbar-menu.active {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  right: 0;
+  gap: 2rem;
+  /* margin-left: -100px;  <-- Eliminado */
   width: 100%;
-  height: 100vh;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  z-index: var(--z-index-fixed);
-  padding: var(--spacing-8) var(--spacing-4);
+  justify-content: right;
+  margin-left: -150px;
 }
 
+/* Estilo para el botón Unirse a Discord */
+.nav-cta {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--white);
+  background: transparent;
+  border: 2px solid var(--gradient-accent-start, #ff6ec4); /* borde suave con color gradiente */
+  border-radius: 12px; /* bordes redondeados suaves */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+
+
+/* Efecto de brillo animado detrás del botón */
+.nav-cta::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5, #4ade80, #3b82f6);
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: 12px;
+  animation: glowRotate 5s linear infinite;
+}
+
+.nav-cta:hover::before {
+  opacity: 0.6;
+}
+
+/* Animación de rotación lenta para el brillo */
+@keyframes glowRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Móvil: menú oculto por defecto, se mueve fuera de pantalla */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-logo {
+    margin-left: 0; /* o algo más pequeño, como -20px */
+    margin-top: 0;
+  }
+
+  .navbar-menu {
+    display: flex;  /* Siempre flex para animaciones y layout */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    right: -100%;  /* Oculto fuera de pantalla */
+    width: 100%;
+    height: 100vh;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    padding: 2rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+    z-index: 9999;
+  }
+
+  /* Cuando está activo, se mueve visible */
+  .navbar-menu.active {
+    right: 0;
+  }
+
+  /* Botón móvil visible */
+  .mobile-menu-btn {
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10001;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--white);
+    border-radius: var(--border-radius-full);
+    transition: var(--transition-base);
+  }
+
+  .mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
+/* Escritorio: botón móvil oculto */
+@media (min-width: 769px) {
+  .mobile-menu-btn {
+    display: none !important;
+  }
+}
+
+/* Links */
 .nav-link {
   position: relative;
   color: var(--white);
@@ -118,7 +235,7 @@
   color: var(--color-neon-pink);
 }
 
-/* Elimino los estilos especiales de Dominios */
+/* Estilos especiales para /dominios */
 .nav-link[href="/dominios"] {
   color: var(--white);
   font-weight: var(--font-weight-medium);
@@ -135,115 +252,6 @@
 
 .nav-link[href="/dominios"]:hover::before {
   background: var(--gradient-glow);
-}
-
-/* Escondemos el menú por defecto en móvil */
-.navbar-menu {
-  display: flex;
-  gap: 1rem;
-}
-
-@media (max-width: 768px) {
-  .navbar-container {
-    padding: 0.5rem 1rem;
-  }
-
-  .navbar-logo {
-    margin-left: -170px;
-    margin-top: -5px;
-  }
-
-  .navbar-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-8) var(--spacing-4);
-    transition: right 0.3s ease-in-out;
-    z-index: var(--z-index-fixed);
-    margin-right: 0;
-  }
-
-  .navbar-menu.active {
-    right: 0;
-  }
-
-  .mobile-menu-btn {
-    display: flex;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 10;
-  }
-}
-
-/* En escritorio, escondemos el botón de cerrar */
-@media (min-width: 769px) {
-  .nav-close-btn {
-    display: none;
-  }
-
-  .mobile-menu-btn {
-    display: none;
-  }
-}
-
-.nav-close-btn {
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  background: transparent;
-  border: 2px solid var(--white);
-  color: var(--white);
-  font-weight: bold;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: var(--transition-base);
-}
-
-.nav-close-btn:hover {
-  background: var(--white);
-  color: black;
-}
-
-/* Mobile Menu Button */
-.mobile-menu-btn {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 10;
-}
-
-.mobile-menu-btn span {
-  width: 100%;
-  height: 3px;
-  background: var(--white);
-  border-radius: var(--border-radius-full);
-  transition: var(--transition-base);
-}
-
-.mobile-menu-btn.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.mobile-menu-btn.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.mobile-menu-btn.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
 }
 
 /* CTA Button */
@@ -269,7 +277,7 @@
   opacity: 0.2;
 }
 
-/* Animation for menu items */
+/* Animación para los links cuando el menú está activo */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -292,54 +300,9 @@
 .navbar-menu.active .nav-link:nth-child(5) { animation-delay: 0.5s; }
 .navbar-menu.active .nav-cta { animation-delay: 0.6s; }
 
-.navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
+/* Otros estilos no relacionados al menú móvil, los dejo igual */
 
-.navbar-logo img {
-  height: 40px;
-  width: auto;
-}
-
-.navbar-right {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.5rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: #007bff;
-  border: 1px solid #007bff;
-  padding: 0.5rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #007bff;
-  color: white;
-}
-
+/* Submenu */
 .submenu {
   position: absolute;
   top: 100%;

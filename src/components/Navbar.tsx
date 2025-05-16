@@ -49,22 +49,16 @@ const Navbar: React.FC = () => {
           <div className="logo-glow"></div>
         </Link>
 
-        <button
-          className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
-        >
-          {isMobileMenuOpen ? (
-            <span>&#x2715;</span> /* Ícono de cerrar */
-          ) : (
-            <>
-           <span> </span>
-           <span></span>
-           <span></span>
-            
-            </>
-          )}
-        </button>
+       <button
+  className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
+  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+  aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
 
         
       </div>
@@ -79,9 +73,7 @@ const Navbar: React.FC = () => {
         <Link to="/plans" className="nav-cta btn-primary" onClick={() => setIsMobileMenuOpen(false)}>Unirse a Discord</Link>
 
         {/* Solo visible en móvil si quieres */}
-        <button className="nav-close-btn" onClick={() => setIsMobileMenuOpen(false)}>
-          Cerrar menú
-        </button>
+       
       </div>
 
 

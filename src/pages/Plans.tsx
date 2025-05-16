@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './Plans.css';
 import ParticlesEffect from '../components/ParticlesEffect';
 
@@ -6,6 +6,8 @@ type PlanCategory = 'shared' | 'vps' | 'wordpress' | 'dedicated' | 'gaming' | 'a
 
 const Plans: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<PlanCategory>('shared');
+  const [sliderStyle, setSliderStyle] = useState({});
+  const tabsRef = useRef<HTMLDivElement>(null);
 
   const categories = [
     { id: 'shared', name: 'Hosting Compartido' },
@@ -15,6 +17,19 @@ const Plans: React.FC = () => {
     { id: 'gaming', name: 'Hosting para Juegos' },
     { id: 'apps', name: 'Hosting para Aplicaciones' }
   ];
+
+  useEffect(() => {
+    if (tabsRef.current) {
+      const activeTab = tabsRef.current.querySelector('.category-tab.active') as HTMLElement;
+      if (activeTab) {
+        setSliderStyle({
+          width: `${activeTab.offsetWidth}px`,
+          left: `${activeTab.offsetLeft}px`,
+          transition: 'all 0.3s ease'
+        });
+      }
+    }
+  }, [activeCategory]);
 
   const plans = {
     shared: [
@@ -277,24 +292,29 @@ const Plans: React.FC = () => {
   };
 
   return (
-    <div className="plans-page">
+     <div className="plans-page">
       <ParticlesEffect />
       <div className="plans-header">
         <h1>Nuestros Planes de Hosting</h1>
         <p>Elige el plan perfecto para tu proyecto</p>
       </div>
 
-      <div className="category-tabs">
-        {categories.map(category => (
-          <button
-            key={category.id}
-            className={`category-tab ${activeCategory === category.id ? 'active' : ''}`}
-            onClick={() => setActiveCategory(category.id as PlanCategory)}
-          >
-            {category.name}
-          </button>
-        ))}
+      <div className="category-switch-container">
+        <div className="category-tabs" ref={tabsRef}>
+          {categories.map(category => (
+            <button
+              key={category.id}
+              className={`category-tab ${activeCategory === category.id ? 'active' : ''}`}
+              onClick={() => setActiveCategory(category.id as PlanCategory)}
+            >
+              {category.name}
+            </button>
+          ))}
+          <div className="category-slider" style={sliderStyle} />
+        </div>
       </div>
+
+      
 
       <div className="plans-grid">
         {plans[activeCategory].map((plan, index) => (

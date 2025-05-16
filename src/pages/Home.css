@@ -546,7 +546,6 @@
   backdrop-filter: var(--glass-blur);
   border-radius: var(--border-radius-xl);
   border: none;
-  padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
@@ -612,6 +611,10 @@
 @media (max-width: 768px) {
   .plans-grid {
     grid-template-columns: 1fr;
+  }
+
+  .plan-price {
+    font-size: 2rem;
   }
   
   .region-selector {

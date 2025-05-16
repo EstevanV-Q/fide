@@ -8,23 +8,27 @@ const AboutUs: React.FC = () => {
       <ParticlesEffect />
       {/* Hero Section */}
       <section className="about-hero">
-        <div className="about-hero-content">
-          <h1>Sobre Nosotros</h1>
-          <p>Tu socio de confianza en hosting desde 2010</p>
-        </div>
-      </section>
+    <div className="about-hero-content">
+      <h1>Sobre Nosotros</h1>
+      <div className="hero-divider"></div>
+      <p>Tu socio de confianza en hosting desde 2010</p>
+    </div>
+  </section>
 
-      {/* Mission & Vision Section */}
-      <section className="mission-vision">
-        <div className="mission">
-          <h2>Nuestra Misión</h2>
-          <p>Proporcionar soluciones de hosting innovadoras y confiables que empoderen a nuestros clientes para alcanzar su máximo potencial digital.</p>
-        </div>
-        <div className="vision">
-          <h2>Nuestra Visión</h2>
-          <p>Ser el proveedor líder de servicios de hosting, reconocido por nuestra excelencia técnica, innovación constante y compromiso con el éxito de nuestros clientes.</p>
-        </div>
-      </section>
+  {/* Mission & Vision Section */}
+  <section className="mission-vision">
+    <div className="mission-card">
+      <div className="card-glow"></div>
+      <h2>Nuestra Misión</h2>
+      <p>Proporcionar soluciones de hosting innovadoras y confiables que empoderen a nuestros clientes para alcanzar su máximo potencial digital.</p>
+    </div>
+    
+    <div className="vision-card">
+      <div className="card-glow"></div>
+      <h2>Nuestra Visión</h2>
+      <p>Ser el proveedor líder de servicios de hosting, reconocido por nuestra excelencia técnica, innovación constante y compromiso con el éxito de nuestros clientes.</p>
+    </div>
+  </section>
 
       {/* History Section */}
       <section className="history">

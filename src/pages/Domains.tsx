@@ -11,7 +11,7 @@ const Domains: React.FC = () => {
 
     AOS.init({
       duration: 1000,
-      once: true,
+      once: false,
       offset: 120,
       easing: 'ease-in-out'
     });
@@ -139,32 +139,32 @@ const Domains: React.FC = () => {
         </div>
       </section>
 
-      <section className="benefits glass-card" data-aos="fade-left">
+      
         <h2 className="section-title">Beneficios</h2>
-        <div className="benefits-grid">
+        <div className="benefits-grid"data-aos="fade-left">
           <div className="benefit-item">
             <div className="benefit-icon-bg">
-              <span className="feature-icon">🔒</span>
+              <img src="/proteger.png" alt="priv" />
             </div>
             <h3>Privacidad Gratuita</h3>
             <p>Protección de datos personales incluida</p>
           </div>
           <div className="benefit-item">
             <div className="benefit-icon-bg">
-              <span className="feature-icon">📧</span>
+              <img src="/profesional.png" alt="email" />
             </div>
             <h3>Email Profesional</h3>
             <p>Cuentas de correo corporativas</p>
           </div>
           <div className="benefit-item">
             <div className="benefit-icon-bg">
-              <span className="feature-icon">🔄</span>
+              <img src="/renovacion-automatica.png" alt="actualizar" />
             </div>
             <h3>Renovación Automática</h3>
             <p>Nunca pierdas tu dominio</p>
           </div>
         </div>
-      </section>
+      
     </div>
   );
 };

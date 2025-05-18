@@ -96,6 +96,7 @@
   position: relative;
   z-index: 2;
   padding: 4rem 2rem;
+  top: -100px;
 }
 
 .section-title {
@@ -156,11 +157,7 @@
   letter-spacing: 1px;
 }
 
-.benefits {
-  background: linear-gradient(120deg, rgba(0,123,255,0.12) 0%, rgba(0,255,135,0.10) 100%);
-  box-shadow: 0 4px 24px rgba(0,255,135,0.08);
-  border: 1.5px solid rgba(0,255,135,0.08);
-}
+
 
 .benefits-grid {
   display: flex !important;
@@ -171,6 +168,7 @@
   flex-wrap: wrap;
   max-width: 900px;
   margin: 0 auto;
+ 
 }
 
 /* Beneficios */
@@ -188,36 +186,29 @@
 .benefit-item:hover {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 12px 32px rgba(0, 153, 255, 0.2);
-  border-color: #00ccff;
+  border-color: #00ccff4f;
 }
 
-.benefit-icon-bg {
-  background: rgba(0, 153, 255, 0.15);
-  box-shadow: 0 4px 12px rgba(0, 153, 255, 0.1);
-}
+
 
 .benefit-item h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: #ffffff;
+  color: #008cff;
 }
 
 .benefit-item p {
-  color: #a0a0a0;
+  color: #ffffff;
+}
+
+.benefit-icon-bg img{ 
+  width: 60px;
+  height: 60px;
+ 
 }
 
 /* Íconos circulares para beneficios */
-.benefit-icon-bg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 1rem auto;
-  border-radius: 50%;
-  background: rgba(0,255,135,0.12);
-  box-shadow: 0 2px 8px rgba(0,255,135,0.10);
-}
+
 
 @media (max-width: 900px) {
   .domain-search {

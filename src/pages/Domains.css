@@ -2,8 +2,8 @@
   min-height: 100vh;
   background: transparent;
   color: #ffffff;
-  position: relative;
-  overflow: hidden;
+  
+ 
 }
 
 .particles-canvas {
@@ -34,7 +34,7 @@
 }
 
 .text-gradient {
-  background: linear-gradient(12deg, #007bff 0%, #0056b3 100%);
+  background: linear-gradient(12deg, #237bda 0%, #0056b3 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: #00ff87;
@@ -116,15 +116,21 @@
 .feature-card {
   position: relative;
   overflow: hidden;
-  border: 1.5px solid rgba(0,255,135,0.08);
-  box-shadow: 0 4px 24px rgba(0,255,135,0.08);
-  transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  background: linear-gradient(145deg, rgba(0, 32, 64, 0.6), rgba(0, 64, 128, 0.6));
+  border: 1.5px solid rgba(0, 153, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 153, 255, 0.08);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(16px);
 }
+
 .feature-card:hover {
-  box-shadow: 0 8px 32px rgba(0,255,135,0.18);
-  border: 1.5px solid #00ff87;
-  transform: translateY(-8px) scale(1.04);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(0, 153, 255, 0.2);
+  border: 1.5px solid #0099ff;
 }
+
 
 .feature-icon {
   font-size: 2.5rem;
@@ -167,27 +173,27 @@
   margin: 0 auto;
 }
 
+/* Beneficios */
 .benefit-item {
-  flex: 0 1 auto;
-  margin: 0;
-  width: auto;
-  box-sizing: border-box;
-  padding: 1.2rem 0.7rem;
-  background: rgba(255,255,255,0.10);
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,255,135,0.08);
+  padding: 2rem 1rem;
+  background: linear-gradient(145deg, rgba(0, 38, 80, 0.4), rgba(0, 51, 102, 0.4));
+  border: 1.5px solid rgba(0, 153, 255, 0.15);
+  border-radius: 1.2rem;
+  box-shadow: 0 6px 20px rgba(0, 153, 255, 0.08);
   text-align: center;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.benefit-item:hover {
-  box-shadow: 0 8px 32px rgba(0,255,135,0.18);
-  transform: translateY(-6px) scale(1.03);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(14px);
 }
 
-.benefit-item .feature-icon {
-  font-size: 2.5rem;
-  margin: 0;
-  color: #00ff87;
+.benefit-item:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0, 153, 255, 0.2);
+  border-color: #00ccff;
+}
+
+.benefit-icon-bg {
+  background: rgba(0, 153, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 153, 255, 0.1);
 }
 
 .benefit-item h3 {

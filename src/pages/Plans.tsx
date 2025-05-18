@@ -35,7 +35,8 @@ const Plans: React.FC = () => {
 
     AOS.init({
       duration: 1000,
-      once: true,
+      once: false,
+      mirror: true,
       offset: 120,
       easing: 'ease-in-out'
     });

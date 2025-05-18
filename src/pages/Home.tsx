@@ -12,12 +12,18 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 120,
-      easing: 'ease-in-out'
-    });
-    AOS.refresh();
+  duration: 1000,
+  once: false,
+  mirror: true,
+  offset: 120,
+  easing: 'ease-in-out',
+});
+
+    const handleScroll = () => {
+      AOS.refreshHard(); // 🔁 Se reinician las animaciones AOS al hacer scroll
+    };
+
+    window.addEventListener('scroll', handleScroll);
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -26,10 +32,10 @@ const Home: React.FC = () => {
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      if (!canvas) return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
+
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
@@ -49,6 +55,7 @@ const Home: React.FC = () => {
         this.speedX = Math.random() * 0.5 - 0.25;
         this.speedY = Math.random() * 0.5 - 0.25;
         this.color = `rgba(255, 255, 255, ${Math.random() * 0.5})`;
+
       }
 
       update() {
@@ -77,7 +84,6 @@ const Home: React.FC = () => {
     }
 
     const animate = () => {
-      if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach(particle => {
         particle.update();
@@ -85,6 +91,7 @@ const Home: React.FC = () => {
       });
       requestAnimationFrame(animate);
     };
+
     animate();
 
     setTimeout(() => {
@@ -95,6 +102,9 @@ const Home: React.FC = () => {
       window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
+
+  // (El resto del componente permanece igual)
+
 
   const usaPlans = [
     {

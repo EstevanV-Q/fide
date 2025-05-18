@@ -651,7 +651,7 @@
   padding: 2rem;
   
   /* Fondo con gradiente sutil y transparencia */
-  background: rgba(49, 8, 78, 0.7); /* Color base con transparencia */
+  background: rgba(50, 4, 124, 0.459); /* Color base con transparencia */
   backdrop-filter: blur(6px); /* Efecto vidrio esmerilado */
   border-radius: 10px; /* Bordes más redondeados */
   
@@ -681,7 +681,7 @@
 .partner-logo:hover {
   transform: translateY(-4px);
   background: rgba(49, 8, 78, 0.9);
-  box-shadow: 0 1px 20px rgba(255, 126, 179, 0.3),
+  box-shadow: 0 1px 20px rgba(95, 48, 69, 0.3),
               0 10px 30px rgba(52, 152, 219, 0.3),
               inset 0 0 30px rgba(255, 255, 255, 0.15);
   

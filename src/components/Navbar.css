@@ -1,6 +1,5 @@
 .navbar {
   position: fixed;
-  top: 0;
   left: 0;
   right: 0;
   z-index: var(--z-index-fixed);
@@ -31,6 +30,8 @@
   text-decoration: none;
   display: flex;
   align-items: center;
+  margin-top: 10px;
+ 
 }
 
 .logo-text {
@@ -67,7 +68,7 @@
   display: flex;
   gap: 2rem;
   /* margin-left: -100px;  <-- Eliminado */
-  width: 100%;
+  width: auto;
   justify-content: right;
   margin-left: -150px;
 }

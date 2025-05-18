@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
 
 
         
-      </div>
+      
 
       <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
         <Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Inicio</Link>
@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
         <Link to="/plans" className="nav-cta btn-primary" onClick={() => setIsMobileMenuOpen(false)}>Unirse a Discord</Link>
 
         {/* Solo visible en móvil si quieres */}
-       
+       </div>
       </div>
 
 

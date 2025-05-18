@@ -1,11 +1,21 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Domains.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Domains: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 120,
+      easing: 'ease-in-out'
+    });
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -86,9 +96,9 @@ const Domains: React.FC = () => {
     <div className="domains">
       <canvas ref={canvasRef} className="particles-canvas" />
       
-      <section className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">
+      <section className="hero" data-aos="fade-up">
+        <div className="hero-content" data-aos="fade-up">
+          <h1 className="hero-title" data-aos="fade-up">
             <span className="text-gradient">Dominios Premium</span>
           </h1>
           <p className="hero-subtitle">
@@ -105,7 +115,7 @@ const Domains: React.FC = () => {
         </div>
       </section>
 
-      <section className="features">
+      <section className="features" data-aos="fade-right">
         <h2 className="section-title">Extensiones Disponibles</h2>
         <div className="features-grid">
           <div className="feature-card glass-card">
@@ -129,7 +139,7 @@ const Domains: React.FC = () => {
         </div>
       </section>
 
-      <section className="benefits glass-card">
+      <section className="benefits glass-card" data-aos="fade-left">
         <h2 className="section-title">Beneficios</h2>
         <div className="benefits-grid">
           <div className="benefit-item">

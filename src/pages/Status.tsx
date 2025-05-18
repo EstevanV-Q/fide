@@ -86,8 +86,11 @@ const Status: React.FC = () => {
     <div className="status-page">
       <ParticlesEffect />
       {/* Hero Section */}
-      <section className="status-hero">
-        <div className="status-hero-content">
+      <section className="status-hero" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom"
+    >
+        <div className="status-hero-content"
+     >
           <h1>Estado del Sistema</h1>
           <p>Monitoreo en tiempo real de todos nuestros servicios</p>
         </div>
@@ -95,21 +98,26 @@ const Status: React.FC = () => {
 
       {/* System Overview */}
       <section className="system-overview">
-        <h2>Resumen del Sistema</h2>
+        <h2 data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">Resumen del Sistema</h2>
         <div className="metrics-grid">
-          <div className="metric-card">
+          <div className="metric-card" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
             <h3>Servidores Totales</h3>
             <div className="metric-value">{systemMetrics.totalServers}</div>
           </div>
-          <div className="metric-card">
+          <div className="metric-card" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
             <h3>Usuarios Activos</h3>
             <div className="metric-value">{systemMetrics.activeUsers.toLocaleString()}</div>
           </div>
-          <div className="metric-card">
+          <div className="metric-card" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
             <h3>Ancho de Banda Total</h3>
             <div className="metric-value">{systemMetrics.totalBandwidth}</div>
           </div>
-          <div className="metric-card">
+          <div className="metric-card" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
             <h3>Tiempo de Respuesta Promedio</h3>
             <div className="metric-value">{systemMetrics.averageResponseTime}</div>
           </div>
@@ -118,10 +126,10 @@ const Status: React.FC = () => {
 
       {/* Services Status */}
       <section className="services-status">
-        <h2>Estado de los Servicios</h2>
-        <div className="services-grid">
+        <h2 data-aos="fade-right">Estado de los Servicios</h2>
+        <div className="services-grid"  data-aos="fade-down">
           {services.map((service, index) => (
-            <div key={index} className="service-card">
+            <div key={index} className="service-card"  data-aos="fade-down">
               <div className="service-header">
                 <h3>{service.name}</h3>
                 <span 
@@ -131,7 +139,7 @@ const Status: React.FC = () => {
                   {getStatusText(service.status)}
                 </span>
               </div>
-              <div className="service-metrics">
+              <div className="service-metrics"  data-aos="fade-down">
                 <div className="metric">
                   <span className="label">Uptime:</span>
                   <span className="value">{service.uptime}</span>
@@ -150,8 +158,8 @@ const Status: React.FC = () => {
 
       {/* Incident History */}
       <section className="incident-history">
-        <h2>Historial de Incidentes</h2>
-        <div className="incident-timeline">
+        <h2 data-aos="zoom-in-down">Historial de Incidentes</h2>
+        <div className="incident-timeline" data-aos="fade-up-right">
           <div className="incident-item">
             <div className="incident-date">15 Mar 2024</div>
             <div className="incident-content">
@@ -160,7 +168,7 @@ const Status: React.FC = () => {
               <span className="incident-status resolved">Resuelto</span>
             </div>
           </div>
-          <div className="incident-item">
+          <div className="incident-item" data-aos="fade-up-right">
             <div className="incident-date">10 Mar 2024</div>
             <div className="incident-content">
               <h3>Problemas de Latencia</h3>
@@ -173,17 +181,17 @@ const Status: React.FC = () => {
 
       {/* Status Legend */}
       <section className="status-legend">
-        <h2>Leyenda de Estados</h2>
+        <h2 data-aos="zoom-in-down">Leyenda de Estados</h2>
         <div className="legend-grid">
-          <div className="legend-item">
+          <div className="legend-item"  data-aos="zoom-in-left">
             <span className="legend-color" style={{ backgroundColor: '#28a745' }}></span>
             <span className="legend-text">Operativo - Todos los sistemas funcionando normalmente</span>
           </div>
-          <div className="legend-item">
+          <div className="legend-item"  data-aos="zoom-in-left">
             <span className="legend-color" style={{ backgroundColor: '#ffc107' }}></span>
             <span className="legend-text">Degradado - Rendimiento reducido o problemas parciales</span>
           </div>
-          <div className="legend-item">
+          <div className="legend-item"  data-aos="zoom-in-left">
             <span className="legend-color" style={{ backgroundColor: '#dc3545' }}></span>
             <span className="legend-text">Fuera de Servicio - Servicio no disponible</span>
           </div>

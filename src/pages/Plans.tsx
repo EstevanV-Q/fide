@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Plans.css';
 import ParticlesEffect from '../components/ParticlesEffect';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 type PlanCategory = 'shared' | 'vps' | 'wordpress' | 'dedicated' | 'gaming' | 'apps';
 
@@ -29,6 +31,14 @@ const Plans: React.FC = () => {
         });
       }
     }
+
+
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 120,
+      easing: 'ease-in-out'
+    });
   }, [activeCategory]);
 
   const plans = {
@@ -299,8 +309,8 @@ const Plans: React.FC = () => {
         <p>Elige el plan perfecto para tu proyecto</p>
       </div>
 
-      <div className="category-switch-container">
-        <div className="category-tabs" ref={tabsRef}>
+      <div className="category-switch-container" data-aos="fade-up">
+        <div className="category-tabs" data-aos="fade-up" ref={tabsRef}>
           {categories.map(category => (
             <button
               key={category.id}
@@ -310,15 +320,15 @@ const Plans: React.FC = () => {
               {category.name}
             </button>
           ))}
-          <div className="category-slider" style={sliderStyle} />
+          <div className="category-slider" data-aos="fade-up" style={sliderStyle} />
         </div>
       </div>
 
       
 
-      <div className="plans-grid">
+      <div className="plans-grid" data-aos="fade-up">
         {plans[activeCategory].map((plan, index) => (
-          <div key={index} className={`plan-card ${index === 1 ? 'featured' : ''}`}>
+          <div key={index} className={`plan-card ${index === 1 ? 'featured' : ''}`} data-aos="fade-up">
             <h3>{plan.name}</h3>
             <div className="price">
               ${plan.price}
@@ -334,22 +344,22 @@ const Plans: React.FC = () => {
         ))}
       </div>
 
-      <div className="plans-faq">
+      <div className="plans-faq" data-aos="fade-up">
         <h2>Preguntas Frecuentes sobre Planes</h2>
-        <div className="faq-grid">
-          <div className="faq-item">
+        <div className="faq-grid" data-aos="fade-up">
+          <div className="faq-item" data-aos="fade-up">
             <h3>¿Puedo cambiar de plan en cualquier momento?</h3>
             <p>Sí, puedes actualizar o degradar tu plan en cualquier momento sin costos adicionales.</p>
           </div>
-          <div className="faq-item">
+          <div className="faq-item" data-aos="fade-up">
             <h3>¿Ofrecen garantía de reembolso?</h3>
             <p>Sí, ofrecemos una garantía de reembolso de 30 días en todos nuestros planes.</p>
           </div>
-          <div className="faq-item">
+          <div className="faq-item" data-aos="fade-up">
             <h3>¿Qué métodos de pago aceptan?</h3>
             <p>Aceptamos tarjetas de crédito, PayPal y transferencia bancaria.</p>
           </div>
-          <div className="faq-item">
+          <div className="faq-item" data-aos="fade-up">
             <h3>¿Puedo migrar mi sitio web?</h3>
             <p>Sí, nuestro equipo puede ayudarte con la migración de forma gratuita.</p>
           </div>

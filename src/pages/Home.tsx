@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageLoader from '../components/PageLoader';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -9,13 +11,20 @@ const Home: React.FC = () => {
   const [isPageLoading, setIsPageLoading] = useState(true);
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 120,
+      easing: 'ease-in-out'
+    });
+    AOS.refresh();
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size
     const resizeCanvas = () => {
       if (!canvas) return;
       canvas.width = window.innerWidth;
@@ -24,7 +33,6 @@ const Home: React.FC = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Particle system
     class Particle {
       x: number = 0;
       y: number = 0;
@@ -68,7 +76,6 @@ const Home: React.FC = () => {
       particles.push(new Particle());
     }
 
-    // Animation loop
     const animate = () => {
       if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -80,7 +87,6 @@ const Home: React.FC = () => {
     };
     animate();
 
-    // Simular carga inicial
     setTimeout(() => {
       setIsPageLoading(false);
     }, 2500);
@@ -94,36 +100,18 @@ const Home: React.FC = () => {
     {
       name: 'Básico',
       price: '$29.99',
-      features: [
-        '4 vCPUs',
-        '8GB RAM',
-        '100GB SSD',
-        '5 Gbps Conexión',
-        'Ryzen 7 5800X'
-      ]
+      features: ['4 vCPUs', '8GB RAM', '100GB SSD', '5 Gbps Conexión', 'Ryzen 7 5800X']
     },
     {
       name: 'Pro',
       price: '$49.99',
-      features: [
-        '8 vCPUs',
-        '16GB RAM',
-        '200GB SSD',
-        '10 Gbps Conexión',
-        'Ryzen 7 5800X'
-      ],
+      features: ['8 vCPUs', '16GB RAM', '200GB SSD', '10 Gbps Conexión', 'Ryzen 7 5800X'],
       popular: true
     },
     {
       name: 'Enterprise',
       price: '$79.99',
-      features: [
-        '12 vCPUs',
-        '32GB RAM',
-        '500GB SSD',
-        '10 Gbps Conexión',
-        'Ryzen 7 5800X'
-      ]
+      features: ['12 vCPUs', '32GB RAM', '500GB SSD', '10 Gbps Conexión', 'Ryzen 7 5800X']
     }
   ];
 
@@ -131,36 +119,18 @@ const Home: React.FC = () => {
     {
       name: 'Básico',
       price: '€34.99',
-      features: [
-        '4 vCPUs',
-        '8GB RAM',
-        '100GB SSD',
-        '5 Gbps Conexión',
-        'Ryzen 9 5900X'
-      ]
+      features: ['4 vCPUs', '8GB RAM', '100GB SSD', '5 Gbps Conexión', 'Ryzen 9 5900X']
     },
     {
       name: 'Pro',
       price: '€54.99',
-      features: [
-        '8 vCPUs',
-        '16GB RAM',
-        '200GB SSD',
-        '10 Gbps Conexión',
-        'Ryzen 9 5900X'
-      ],
+      features: ['8 vCPUs', '16GB RAM', '200GB SSD', '10 Gbps Conexión', 'Ryzen 9 5900X'],
       popular: true
     },
     {
       name: 'Enterprise',
       price: '€84.99',
-      features: [
-        '12 vCPUs',
-        '32GB RAM',
-        '500GB SSD',
-        '10 Gbps Conexión',
-        'Ryzen 9 5900X'
-      ]
+      features: ['12 vCPUs', '32GB RAM', '500GB SSD', '10 Gbps Conexión', 'Ryzen 9 5900X']
     }
   ];
 
@@ -170,9 +140,9 @@ const Home: React.FC = () => {
     <div className="home">
       <canvas ref={canvasRef} className="particles-canvas" />
       {isPageLoading && <PageLoader />}
-      
+
       <section className="hero">
-        <div className="hero-content">
+        <div className="hero-content" data-aos="fade-up">
           <h1 className="hero-title">
             <span className="text-gradient">Hosting de Alto Rendimiento</span>
           </h1>
@@ -188,29 +158,27 @@ const Home: React.FC = () => {
             </Link>
           </div>
         </div>
-        <div className="hero-image">
+        <div className="hero-image" data-aos="fade-left" data-aos-delay="300">
           <div className="server-illustration">
-            {/* Add your server illustration here */}
+            {/* Agrega tu ilustración de servidor aquí */}
           </div>
         </div>
       </section>
 
-      
-
       <section className="features">
-        <h2 className="section-title">Características Destacadas</h2>
+        <h2 className="section-title" data-aos="fade-up">Características Destacadas</h2>
         <div className="features-grid">
-          <div className="feature-card glass-card">
+          <div className="feature-card glass-card" data-aos="zoom-in" data-aos-delay="100">
             <div className="feature-icon">🚀</div>
             <h3>Alto Rendimiento</h3>
             <p>Servidores optimizados para máxima velocidad y eficiencia.</p>
           </div>
-          <div className="feature-card glass-card">
+          <div className="feature-card glass-card" data-aos="zoom-in" data-aos-delay="200">
             <div className="feature-icon">🛡️</div>
             <h3>Seguridad Avanzada</h3>
             <p>Protección DDoS y firewall de última generación.</p>
           </div>
-          <div className="feature-card glass-card">
+          <div className="feature-card glass-card" data-aos="zoom-in" data-aos-delay="300">
             <div className="feature-icon">⚡</div>
             <h3>99.9% Uptime</h3>
             <p>Garantía de disponibilidad con monitoreo 24/7.</p>
@@ -219,8 +187,8 @@ const Home: React.FC = () => {
       </section>
 
       <section className="popular-plans">
-        <h2>Planes más populares</h2>
-        <div className="region-selector">
+        <h2 data-aos="fade-up">Planes más populares</h2>
+        <div className="region-selector" data-aos="fade-up" data-aos-delay="100">
           <button 
             className={`region-btn ${selectedRegion === 'usa' ? 'active' : ''}`}
             onClick={() => setSelectedRegion('usa')}
@@ -234,7 +202,7 @@ const Home: React.FC = () => {
             Madrid
           </button>
         </div>
-        <p className="specs-info">
+        <p className="specs-info" data-aos="fade-up" data-aos-delay="200">
           {selectedRegion === 'usa' 
             ? 'Nuestras máquinas en USA cuentan con Ryzen 7 5800X y 5-10 Gbps de conexión'
             : 'Nuestras máquinas en Madrid cuentan con Ryzen 9 5900X y 5-10 Gbps de conexión'
@@ -242,7 +210,12 @@ const Home: React.FC = () => {
         </p>
         <div className="plans-grid">
           {plans.map((plan, index) => (
-            <div key={index} className={`plan-card ${plan.popular ? 'popular' : ''}`}>
+            <div 
+              key={index} 
+              className={`plan-card ${plan.popular ? 'popular' : ''}`}
+              data-aos="fade-up"
+              data-aos-delay={`${index * 200}`}
+            >
               <h3>{plan.name}</h3>
               <div className="plan-price">{plan.price}/mes</div>
               <ul className="plan-features">
@@ -258,24 +231,22 @@ const Home: React.FC = () => {
 
       <section className="stats">
         <div className="stats-container">
-          <div className="stat-item">
+          <div className="stat-item" data-aos="flip-up" data-aos-delay="100">
             <span className="stat-number">99.9%</span>
             <span className="stat-label">Uptime</span>
           </div>
-          <div className="stat-item">
+          <div className="stat-item" data-aos="flip-up" data-aos-delay="200">
             <span className="stat-number">24/7</span>
             <span className="stat-label">Soporte</span>
           </div>
-          <div className="stat-item">
+          <div className="stat-item" data-aos="flip-up" data-aos-delay="300">
             <span className="stat-number">10k+</span>
             <span className="stat-label">Clientes</span>
           </div>
         </div>
       </section>
-
-      
     </div>
   );
 };
 
-export default Home; 
+export default Home;

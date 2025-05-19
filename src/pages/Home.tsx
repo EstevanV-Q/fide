@@ -234,7 +234,7 @@ const Home: React.FC = () => {
                   <li key={idx}>{feature}</li>
                 ))}
               </ul>
-              <button className="btn btn-primary">Seleccionar Plan</button>
+              <button className="btn btn-Primary">Seleccionar Plan</button>
             </div>
           ))}
         </div>

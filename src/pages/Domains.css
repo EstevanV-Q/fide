@@ -1,9 +1,179 @@
+/* Hero Section - Búsqueda de dominios */
+.domain-search {
+  background: rgba(0, 1, 171, 0.3);
+  backdrop-filter: blur(12px);
+  border: 2px solid #977DFF;
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 1rem auto;
+  box-shadow: 0 8px 32px rgba(0, 1, 171, 0.2);
+}
+
+.domain-input {
+  flex: 1;
+  background: rgba(0, 3, 61, 0.5);
+  border: 1px solid #0033FF;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.domain-input::placeholder {
+  color: rgba(151, 125, 255, 0.7);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #977DFF, #0033FF);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(151, 125, 255, 0.4);
+}
+
+/* Sección de extensiones */
+.features {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0202d879, #00033D);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.feature-card {
+  background: rgba(0, 1, 171, 0.25);
+  border: 2px solid #977DFF;
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, #0033FF 50%, transparent);
+  opacity: 0.1;
+  transform: rotate(45deg);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 1, 171, 0.3);
+  border-color: #0033FF;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #977DFF, #0033FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.price {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #977DFF;
+  font-weight: bold;
+}
+
+/* Sección de Beneficios */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+.benefit-item {
+  background: rgba(0, 3, 61, 0.4);
+  border: 2px solid #0033FF;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 51, 255, 0.1);
+  border-color: #ffffff;
+}
+
+.benefit-icon-bg {
+  width: 80px;
+  height: 80px;
+  background: rgba(151, 125, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  border: 2px solid #0033FF;
+}
+
+.benefit-item h3 {
+  color: #977DFF;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-item p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+/* Títulos de sección */
+
+
+/* Efectos responsivos */
+@media (max-width: 768px) {
+  .features-grid, .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefits-grid {
+    padding: 1rem;
+  }
+  
+  .domain-search {
+    flex-direction: column;
+  }
+  
+  .btn-primary {
+    width: 100%;
+  }
+}
+
+
 .domains {
   min-height: 100vh;
   background: transparent;
   color: #ffffff;
-  
- 
 }
 
 .particles-canvas {
@@ -81,14 +251,14 @@
   font-size: 1.3rem;
   border-radius: 0.75rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #00ff87 0%, #007bff 100%);
+  background: linear-gradient(135deg, #1900ff83 0%, #01356d 100%);
   color: #1a1a1a;
   border: none;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: background 0.2s, transform 0.2s;
 }
 .domain-search .btn:hover {
-  background: linear-gradient(135deg, #007bff 0%, #00ff87 100%);
+  background: linear-gradient(135deg, #0c2f55 0%, #020755 100%);
   transform: translateY(-2px) scale(1.04);
 }
 
@@ -99,12 +269,7 @@
   top: -100px;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #ffffff;
-}
+
 
 .features-grid {
   display: grid;

@@ -154,7 +154,7 @@ const Home: React.FC = () => {
       <section className="hero">
         <div className="hero-content" data-aos="fade-up">
           <h1 className="hero-title">
-            <span className="text-gradient">Hosting de Alto Rendimiento</span>
+            <span className="text-gradienet">Hosting de Alto Rendimiento</span>
           </h1>
           <p className="hero-subtitle">
             Soluciones de hosting optimizadas para tu negocio
@@ -175,8 +175,9 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="features">
+      <section className="featuresbg">
         <h2 className="section-title" data-aos="fade-up">Características Destacadas</h2>
+        
         <div className="features-grid">
           <div className="feature-card glass-card" data-aos="zoom-in" data-aos-delay="100">
             <div className="feature-icon">🚀</div>

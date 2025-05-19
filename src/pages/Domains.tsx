@@ -119,19 +119,19 @@ const Domains: React.FC = () => {
         <h2 className="section-title">Extensiones Disponibles</h2>
         <div className="features-grid">
           <div className="feature-card glass-card">
-            <div className="feature-icon">🌐</div>
+            <img  className="extensions" src="\icons8-nombre-de-dominio-48.png" alt="" />
             <h3>.com</h3>
             <p>El dominio más popular y reconocido mundialmente.</p>
             <span className="price">$12.99/año</span>
           </div>
           <div className="feature-card glass-card">
-            <div className="feature-icon">🌍</div>
+            <img  className="extensions" src="\icons8-internet-65.png" alt="" />
             <h3>.net</h3>
             <p>Ideal para proyectos tecnológicos y redes.</p>
             <span className="price">$14.99/año</span>
           </div>
           <div className="feature-card glass-card">
-            <div className="feature-icon">🏢</div>
+            <img  className="extensions" src="\icons8-internet-64.png" alt="" />
             <h3>.org</h3>
             <p>Perfecto para organizaciones y proyectos sin fines de lucro.</p>
             <span className="price">$13.99/año</span>

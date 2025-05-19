@@ -194,11 +194,7 @@ body {
 
 /* Text Styles */
 .text-center { text-align: center; }
-.text-gradient {
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
 
 /* Utility Classes */
 .m-1 { margin: var(--spacing-1); }

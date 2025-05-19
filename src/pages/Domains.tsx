@@ -104,7 +104,7 @@ const Domains: React.FC = () => {
           <p className="hero-subtitle">
             Encuentra el nombre perfecto para tu proyecto
           </p>
-          <div className="domain-search glass-card">
+          <div className="domain-search">
             <input 
               type="text" 
               placeholder="Busca tu dominio ideal..." 

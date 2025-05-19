@@ -1,8 +1,8 @@
 /* Hero Section - Búsqueda de dominios */
 .domain-search {
-  background: rgba(0, 1, 171, 0.3);
+  background: rgba(40, 40, 112, 0.74);
   backdrop-filter: blur(12px);
-  border: 2px solid #977DFF;
+  border: 2px solid #b3c7e688;
   border-radius: 15px;
   padding: 1.5rem;
   display: flex;
@@ -14,7 +14,7 @@
 
 .domain-input {
   flex: 1;
-  background: rgba(0, 3, 61, 0.5);
+  background: rgba(236, 237, 255, 0.5);
   border: 1px solid #0033FF;
   color: white;
   padding: 12px 20px;
@@ -23,7 +23,7 @@
 }
 
 .domain-input::placeholder {
-  color: rgba(151, 125, 255, 0.7);
+  color: rgb(252, 252, 252);
 }
 
 .btn-primary {
@@ -44,7 +44,7 @@
 /* Sección de extensiones */
 .features {
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #0202d879, #00033D);
+  background: linear-gradient(135deg, #0606613a, #00033d69);
 }
 
 .features-grid {
@@ -84,8 +84,8 @@
 }
 
 .feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 2em;
   background: linear-gradient(90deg, #977DFF, #0033FF);
   -webkit-background-clip: text;
   background-clip: text;
@@ -95,8 +95,7 @@
 .price {
   display: block;
   margin-top: 1rem;
-  font-size: 1.5rem;
-  color: #977DFF;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -204,7 +203,7 @@
 }
 
 .text-gradient {
-  background: linear-gradient(12deg, #237bda 0%, #0056b3 100%);
+  background: linear-gradient(12deg, #3898ff 0%, #0056b3 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: #00ff87;
@@ -213,7 +212,7 @@
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: #a0a0a0;
+  color: #ffffffd5;
   margin-bottom: 2rem;
 }
 
@@ -222,7 +221,7 @@
   gap: 1rem;
   padding: 1.5rem 2rem;
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(43, 10, 95, 0.267);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   backdrop-filter: blur(12px);
   max-width: 600px;
@@ -236,14 +235,14 @@
   font-size: 1.3rem;
   border: none;
   border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(41, 52, 82, 0.473);
   color: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: box-shadow 0.2s;
 }
 .domain-input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00ff87;
+  box-shadow: 0 0 0 2px #00ccff59;
 }
 
 .domain-search .btn {
@@ -251,15 +250,17 @@
   font-size: 1.3rem;
   border-radius: 0.75rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #1900ff83 0%, #01356d 100%);
+  background: linear-gradient(135deg, #02c4ffa2 0%, #04478f 100%);
   color: #1a1a1a;
   border: none;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: background 0.2s, transform 0.2s;
 }
 .domain-search .btn:hover {
-  background: linear-gradient(135deg, #0c2f55 0%, #020755 100%);
+  background: linear-gradient(135deg, #005ec2 0%, #020755 100%);
   transform: translateY(-2px) scale(1.04);
+  border: none !important;
+  box-shadow: none;
 }
 
 .features {
@@ -299,27 +300,24 @@
 
 
 .feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
 .feature-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #ffffff;
 }
 
 .feature-card p {
-  color: #a0a0a0;
+  color: #a4c2fa;
   margin-bottom: 1.5rem;
 }
 
 .price {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #00ff87;
-  margin-top: 1rem;
-  letter-spacing: 1px;
+  font-size: 2rem;
+  
 }
 
 

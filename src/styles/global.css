@@ -355,11 +355,7 @@ a:hover::after {
 }
 
 /* Utility Classes */
-.text-gradient {
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
 
 .glass-effect {
   background: var(--glass-bg);
